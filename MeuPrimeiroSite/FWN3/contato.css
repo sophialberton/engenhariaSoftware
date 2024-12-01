@@ -1,0 +1,162 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+} 
+header, footer{
+    background-color: #E3D5CA;
+    color: rgb(33, 51, 68);
+    width: 100%;
+}
+.logo {
+    font-size: 4em;
+    font-weight: bold;
+}
+.SophiaPicaskyAlberton {
+    font-size: 1.8em;
+}
+
+/*decoração botão*/
+button {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 100;
+    align-items: center;
+    padding: 10px;
+    background-color: #C6A1CB;
+    border: solid #BD94BA 0;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+} 
+footer{
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 22px;
+    padding: 100px 0;
+}
+header{
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+ /*separa itens do header, da um espaçamento
+.nav-links li {
+    padding: 0 20px;
+}*/
+nav ul li{
+    list-style: none;
+    display: inline-block;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 100;
+    align-items: center;
+    padding: 10px;
+    background-color: #C6A1CB;
+    border: solid #BD94BA 0;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+}
+nav u li a{
+    text-decoration: none;
+    color:rgb(149, 0, 255);
+    font-size: 18px;
+    padding: 0 15px;
+    
+}
+/*formulario slides*/
+.form-container {
+    width: 60%;
+    padding: 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}   
+ .form-container h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+ }
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    outline: none;
+}
+
+ label {
+    margin-top: 10px;
+    display: block;
+    font-weight: bold;
+}
+
+.formulario{
+    text-align: center;
+    margin-bottom: 20px;
+
+}
+ /*Slides: estilo do formulario*/
+
+ form{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+ }
+
+input, textarea{
+    width:100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input:focus, textarea:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+/*Botao enviar*/
+button{
+    padding: 10px;
+    background-color: #007bff ;
+    color: white;
+    border:none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: backgroud-color 0.3s;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+
+
+
+
+
+
+
+
