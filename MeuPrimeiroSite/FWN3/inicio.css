@@ -132,66 +132,54 @@ main {
   background-color: #E3D5CA; /* Cor de fundo */
 }
 
-.content-container {
-  display: flex; /* Layout flexível */
-  width: 80%; /* Largura máxima do conteúdo */
-  align-items: flex-start; /* Alinha ao topo */
-  gap: 20px; /* Espaçamento entre elementos */
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  height: 45vh;
+  padding: 20px;
+  background-color: #E3D5CA;
 }
 
-.text-area {
-  flex: 1; /* Ocupa o espaço disponível */
-  padding: 24px; /* Espaçamento interno */
-  word-wrap: break-word; /* Evita transbordo do texto */
-  font-size: 1.8em;
+.left-side {
+  flex: 1;
+  padding-right: 20px;
 }
 
-.carousel-container {
-  display: flex; /* Layout flexível */
-  flex-direction: column; /* Alinha verticalmente */
-  align-items: center; /* Centraliza itens */
-  max-width: 50%; /* Largura máxima */
+.right-side {
+  flex: 1;
+  position: relative;
 }
 
 .carousel {
-  display: flex; /* Layout flexível */
-  width: 100%; /* Largura total */
-  height: 300px; /* Altura fixa */
-  overflow: hidden; /* Oculta elementos fora do container */
-  position: relative; /* Posicionamento relativo para controle interno */
-  transition: transform 0.5s ease-in-out; /* Movimento suave */
+  width: 100%;
+  height: 300px; /* Ajuste conforme o tamanho desejado */
+  overflow: hidden;
+  position: relative;
 }
 
-.carousel img {
-  width: 100%; /* Largura total da imagem */
-  height: 100%; /* Altura total */
-  object-fit: cover; /* Mantém proporções da imagem */
-}
-  
-.carousel-slide{
-  gap: 10px
-}
-
-/* Estilo para botões de controle do carrossel */
-.controls {
-  display: flex; /* Layout flexível */
-  justify-content: center; /* Centraliza botões */
-  gap: 10px; /* Espaçamento entre botões */
-  margin-top: 10px; /* Espaçamento superior */
+.carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 100%;
+  opacity: 0;
+  transition: opacity 0.5s ease;
 }
 
-.controls button {
-  padding: 10px 20px; /* Espaçamento interno */
-  background-color: #333; /* Fundo escuro */
-  color: white; /* Texto branco */
-  border: none; /* Remove borda */
-  cursor: pointer; /* Mostra cursor de clique */
-  border-radius: 5px; /* Cantos arredondados */
+.carousel-image.active {
+  left: 0;
+  opacity: 1;
 }
 
-.controls button:hover {
-  background-color: #555; /* Cor de fundo ao passar o mouse */
+.buttons {
+  margin-top: 10px;
 }
-.carousel-slide{
-  
+
+button {
+  padding: 10px;
+  margin: 0 5px;
+  cursor: pointer;
 }

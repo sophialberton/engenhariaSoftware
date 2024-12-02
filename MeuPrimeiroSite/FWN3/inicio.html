@@ -21,9 +21,32 @@
                 </ul>
             </nav>
     </header>
+    <div class="container">
+        <!-- Lado esquerdo: Texto -->
+        <div class="left-side">
+            <h1>LINHA DO TEMPO</h1>
+            <p>Linha do tempo da minha vida! Começando pelas situações mais recente para mais antigas.
+                Contanto com detalhes cada fase que eu considero importante da minha vida, sou muito grata a todo conhecimento e espero estar sempre evoluindo!</p>
+        </div>
+
+        <!-- Lado direito: Carrossel de imagens -->
+        <div class="right-side">
+            <div class="carousel">
+                <img src="Imagens/baixados.jpg" class="carousel-image active" alt="Imagem 1">
+                <img src="Imagens/CATOLICASC.jpg" class="carousel-image" alt="Imagem 2">
+                <img src="Imagens/Estrela PNG Sem Fundo Preta Negra.png" class="carousel-image" alt="Imagem 3">
+            </div>
+            
+            <div class="buttons">
+                <button onclick="changeImage(0)">1</button>
+                <button onclick="changeImage(1)">2</button>
+                <button onclick="changeImage(2)">3</button>
+            </div>
+        </div>
+    </div>
     <!--Final Cabeçalho-->
     <!--Carrosse (GPT)-->
-    <main>
+    <!--<main>
         <div class="content-container">
         <div class="text-area">
             <h2>LINHA DO TEMPO</h2>
@@ -43,9 +66,13 @@
                     <button id="next">▶</button>
             </div>
         </div>
-    </main>
+    </main>-->
     <!--Final Carrossel (GPT)-->
-        <div><!--Colocar conteudo Dentro da div -->
+    
+
+
+
+    <div><!--Colocar conteudo Dentro da div -->
         <img src="Imagens/LogoCatolicaTransparente.png"></div>
 
             <!--APAGAR ABAIXO -->
@@ -78,6 +105,7 @@
         </div>
     </section>
     <section>
+
         <h2>Introduction to JavaScript</h2>
         <p>JavaScript is a programming language that makes web pages interactive. You can create alerts, dynamic elements, or even modify the content of the page based on user actions.</p>
         <div class="example">
@@ -87,17 +115,26 @@
             </div>
         </div>
         <button onclick="greetUser()">Try JavaScript</button>
-    </section>
-    <!--APAGAR ACIMA-->
-        </div>
+    </section>  
+            <!--APAGAR ACIMA-->
+
+
+
+    </div>
+
         <section id="sobre">
             <h2>Sobre</h2>
             <p>Sobreeeeaaaaaa</p>
         </section>
+      
         <footer>
             <h3>& copy; All Right Reservad</h3>
             <button onclick="EnviarFormulario()">Enviar Email</button>
         </footer>
-    <script src="inicio.js"></script>
+
+
+
+        <script src="inicio.js"></script>
+
     </body>
     </html>

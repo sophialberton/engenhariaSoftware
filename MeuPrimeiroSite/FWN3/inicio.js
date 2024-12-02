@@ -4,30 +4,11 @@ function EnviarFormulario() {
 
 //javascript do chat gpt
 
-document.addEventListener("DOMContentLoaded", () => {
-  const carousel = document.querySelector(".carousel");
-  const slides = document.querySelectorAll(".carousel-slide");
-  const prevBtn = document.getElementById("prev");
-  const nextBtn = document.getElementById("next");
-  const totalSlides = slides.length;
+let currentIndex = 0;
+const images = document.querySelectorAll('.carousel-image');
 
-  let currentSlide = 0;
-
-  const updateCarousel = () => {
-      const offset = -currentSlide * 100; // Calcula a posição do slide atual
-      carousel.style.transform = `translateX(${offset}%)`;
-  };
-
-  prevBtn.addEventListener("click", () => {
-      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
-      updateCarousel();
-  });
-
-  nextBtn.addEventListener("click", () => {
-      currentSlide = (currentSlide + 1) % totalSlides;
-      updateCarousel();
-  });
-
-  // Atualiza o carrossel na inicialização
-  updateCarousel();
-});
+function changeImage(index) {
+    images[currentIndex].classList.remove('active'); // Remove a classe "active" da imagem atual
+    currentIndex = index; // Atualiza o índice da imagem ativa
+    images[currentIndex].classList.add('active'); // Adiciona a classe "active" à nova imagem
+}
