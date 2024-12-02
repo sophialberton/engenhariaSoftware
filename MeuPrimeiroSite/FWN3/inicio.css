@@ -4,7 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  border: 1px solid red; /* Apenas para melhor visualização durante o desenvolvimento */
+  border: 0px solid red; /* Apenas para melhor visualização durante o desenvolvimento */
 }
 
 /* Define estilo para o cabeçalho e rodapé */
@@ -128,7 +128,7 @@ section {
 main {
   display: flex; /* Layout flexível */
   justify-content: center; /* Centraliza o conteúdo */
-  margin-top: 20px; /* Espaçamento superior */
+  margin-top: 0px; /* Espaçamento superior */
   background-color: #E3D5CA; /* Cor de fundo */
 }
 
@@ -143,6 +143,7 @@ main {
   flex: 1; /* Ocupa o espaço disponível */
   padding: 24px; /* Espaçamento interno */
   word-wrap: break-word; /* Evita transbordo do texto */
+  font-size: 1.8em;
 }
 
 .carousel-container {
@@ -166,6 +167,10 @@ main {
   height: 100%; /* Altura total */
   object-fit: cover; /* Mantém proporções da imagem */
 }
+  
+.carousel-slide{
+  gap: 10px
+}
 
 /* Estilo para botões de controle do carrossel */
 .controls {
@@ -186,4 +191,7 @@ main {
 
 .controls button:hover {
   background-color: #555; /* Cor de fundo ao passar o mouse */
+}
+.carousel-slide{
+  
 }

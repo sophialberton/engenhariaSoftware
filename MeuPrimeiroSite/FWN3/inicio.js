@@ -3,6 +3,7 @@ function EnviarFormulario() {
 }
 
 //javascript do chat gpt
+
 document.addEventListener("DOMContentLoaded", () => {
   const carousel = document.querySelector(".carousel");
   const slides = document.querySelectorAll(".carousel-slide");
