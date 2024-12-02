@@ -3,31 +3,30 @@ function EnviarFormulario() {
 }
 
 //javascript do chat gpt
-const carousel = document.querySelector('.carousel');
-const images = document.querySelectorAll('.carousel img');
-const prevButton = document.getElementById('prev');
-const nextButton = document.getElementById('next');
+document.addEventListener("DOMContentLoaded", () => {
+  const carousel = document.querySelector(".carousel");
+  const slides = document.querySelectorAll(".carousel-slide");
+  const prevBtn = document.getElementById("prev");
+  const nextBtn = document.getElementById("next");
+  const totalSlides = slides.length;
 
-let currentIndex = 0;
+  let currentSlide = 0;
 
-function updateCarousel() {
-  // Move o carrossel para a imagem atual
-  const offset = -currentIndex * 100; // Cada imagem ocupa 100% da largura
-  carousel.style.transform = `translateX(${offset}%)`;
-}
+  const updateCarousel = () => {
+      const offset = -currentSlide * 100; // Calcula a posição do slide atual
+      carousel.style.transform = `translateX(${offset}%)`;
+  };
 
-prevButton.addEventListener('click', () => {
-  currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+  prevBtn.addEventListener("click", () => {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+  });
+
+  nextBtn.addEventListener("click", () => {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      updateCarousel();
+  });
+
+  // Atualiza o carrossel na inicialização
   updateCarousel();
 });
-
-nextButton.addEventListener('click', () => {
-  currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-  updateCarousel();
-});
-
-// Rotação automática opcional
-setInterval(() => {
-  currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-  updateCarousel();
-}, 5000);

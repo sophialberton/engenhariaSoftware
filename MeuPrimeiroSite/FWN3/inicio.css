@@ -1,166 +1,189 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-    border: 1px solid red;/*Apenas para mehor vizualização*/
-} 
-header, footer{
-    background-color: #E3D5CA;
-    color: rgb(33, 51, 68);
-    width: 100%;
+/* Remove margens e espaçamentos padrão, define o modelo de caixa e fontes padrão */
+* { 
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid red; /* Apenas para melhor visualização durante o desenvolvimento */
 }
+
+/* Define estilo para o cabeçalho e rodapé */
+header, footer {
+  background-color: #E3D5CA; /* Cor de fundo */
+  color: rgb(33, 51, 68); /* Cor do texto */
+  width: 100%; /* Ocupa toda a largura */
+}
+
+/* Estilo para o logotipo */
 .logo {
-    font-size: 4em;
-    font-weight: bold;
+  font-size: 4em; /* Tamanho grande para o texto do logotipo */
+  font-weight: bold; /* Deixa o texto em negrito */
 }
+
+/* Estilo para elementos com a classe SophiaPicaskyAlberton */
 .SophiaPicaskyAlberton {
-    font-size: 1.8em;
+  font-size: 1.8em; /* Define um tamanho de fonte maior */
 }
- /*separa itens do header, da um espaçamento*/
+
+/* Define espaçamento horizontal entre itens da lista de links */
 .nav-links li {
-    padding: 0 20px;
+  padding: 0 20px;
 }
-/*decoração botão*/
+
+/* Estilo para os botões */
 button {
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    color: #000000;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: 100;
-    align-items: center;
-    padding: 10px;
-    background-color: #C6A1CB;
-    border: solid #BD94BA 0;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-} 
-footer{
-    bottom: 0;
-    text-align: center;
-    font-size: 22px;
-    padding: 100px 0;
+  -webkit-border-radius: 50px; /* Borda arredondada (compatibilidade WebKit) */
+  -moz-border-radius: 50px; /* Borda arredondada (compatibilidade Firefox antigo) */
+  border-radius: 50px; /* Borda arredondada */
+  color: #000000; /* Cor do texto */
+  font-family: Arial; /* Fonte do texto */
+  font-size: 20px; /* Tamanho da fonte */
+  font-weight: 100; /* Peso da fonte mais fino */
+  align-items: center; /* Alinha o conteúdo centralmente */
+  padding: 10px; /* Espaçamento interno */
+  background-color: #C6A1CB; /* Cor de fundo */
+  border: solid #BD94BA 0; /* Sem borda visível */
+  text-decoration: none; /* Remove sublinhado */
+  display: inline-block; /* Exibe como bloco inline */
+  cursor: pointer; /* Mostra o cursor de clique */
+  text-align: center; /* Centraliza o texto */
 }
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
+
+/* Estilo para o rodapé */
+footer {
+  bottom: 0; /* Posiciona no final */
+  text-align: center; /* Centraliza o texto */
+  font-size: 22px; /* Tamanho da fonte */
+  padding: 100px 0; /* Espaçamento interno no topo e embaixo */
 }
-.botao{
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    color: #000000;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: 100;
-    align-items: center;
-    padding: 10px;
-    background-color: #C6A1CB;
-    border: solid #BD94BA 0;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
+
+/* Define layout do cabeçalho */
+header {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha itens no centro verticalmente */
+  justify-content: space-around; /* Distribui itens com espaçamento uniforme */
 }
-nav ul li{
-    list-style: none;
-    display: inline-block;
+
+/* Estilo alternativo para botões */
+.botao {
+  -webkit-border-radius: 50px; /* Compatível com WebKit */
+  -moz-border-radius: 50px; /* Compatível com Firefox antigo */
+  border-radius: 50px; /* Borda arredondada */
+  color: #000000; /* Cor do texto */
+  font-family: Arial; /* Fonte do texto */
+  font-size: 20px; /* Tamanho da fonte */
+  font-weight: 100; /* Peso da fonte mais fino */
+  align-items: center; /* Centraliza o conteúdo */
+  padding: 10px; /* Espaçamento interno */
+  background-color: #C6A1CB; /* Cor de fundo */
+  border: solid #BD94BA 0; /* Sem borda visível */
+  text-decoration: none; /* Remove sublinhado */
+  display: inline-block; /* Exibe como bloco inline */
+  cursor: pointer; /* Mostra o cursor de clique */
+  text-align: center; /* Centraliza o texto */
 }
-nav u li a{
-    text-decoration: none;
-    color:rgb(89, 255, 0);
-    font-size: 18px;
-    padding: 0 15px;
-    
+
+/* Estilo para itens de lista dentro da navegação */
+nav ul li {
+  list-style: none; /* Remove marcações da lista */
+  display: inline-block; /* Exibe como bloco inline */
 }
-/*APAGAR*/
+
+/* Estilo para links dentro de navegação */
+nav u li a {
+  text-decoration: none; /* Remove sublinhado */
+  color: rgb(89, 255, 0); /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */
+  padding: 0 15px; /* Espaçamento interno horizontal */
+}
+
+/* Estilo genérico para seções */
 section {
-    padding: 20px;
-    margin: 20px;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px; /* Espaçamento interno */
+  margin: 20px; /* Espaçamento externo */
+  background-color: white; /* Cor de fundo */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
+
+/* Estilo para blocos de exemplo */
 .example {
-    padding: 10px;
-    background-color: #e8f5e9;
-    border-left: 4px solid #4CAF50;
-    margin-bottom: 20px;
+  padding: 10px; /* Espaçamento interno */
+  background-color: #e8f5e9; /* Cor de fundo suave */
+  border-left: 4px solid #4CAF50; /* Barra verde à esquerda */
+  margin-bottom: 20px; /* Espaçamento externo inferior */
 }
+
+/* Estilo para blocos de código */
 .code {
-    background: #333;
-    color: #fff;
-    padding: 10px;
-    font-family: monospace;
-    overflow-x: auto;
-    border-radius: 5px;
+  background: #333; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  padding: 10px; /* Espaçamento interno */
+  font-family: monospace; /* Fonte monoespaçada */
+  overflow-x: auto; /* Rolagem horizontal se necessário */
+  border-radius: 5px; /* Cantos arredondados */
 }
-/*carrosel dado pelo chat gpt*/
+
+/* Estilo para o carrossel */
 main {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-  }
-  
-  .content-container {
-    display: flex;
-    width: 80%;
-    align-items: flex-start; /* Garante alinhamento no topo */
-    gap: 20px;
-  }
-  
-  .text-area {
-    flex: 1;
-    padding: 24px;
-    word-wrap: break-word; /* Garante que o texto não ultrapasse o limite */
-  }
-  
-  .carousel-container {
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza o conteúdo */
+  margin-top: 20px; /* Espaçamento superior */
+  background-color: #E3D5CA; /* Cor de fundo */
+}
 
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    max-width: 50%;
-  }
-  
-  .carousel {
-    display: flex;
-    width: 50%; /* Largura total do carrossel baseada no número de imagens */
-    height: 300px;
-    overflow: hidden;
-    position: relative;
-    transition: transform 0.5s ease-in-out; /* Move de forma suave */
-  }
-  
-  .carousel img {
-    flex: 0 0 100%; /* Cada imagem ocupa 100% do contêiner */
-    max-width: 100%; /* Garante que as imagens não excedam o limite */
-    height: auto; /* Mantém a proporção */
+.content-container {
+  display: flex; /* Layout flexível */
+  width: 80%; /* Largura máxima do conteúdo */
+  align-items: flex-start; /* Alinha ao topo */
+  gap: 20px; /* Espaçamento entre elementos */
+}
 
-  }
-  
-  .controls {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    margin-top: 10px;
-  }
-  
-  /* Certifique-se de que botões do carrossel não tenham conflito */
-  .controls button {
-    padding: 10px 20px;
-    background-color: #333;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 5px;
-  }
-  
-  .controls button:hover {
-    background-color: #555;
-  }
+.text-area {
+  flex: 1; /* Ocupa o espaço disponível */
+  padding: 24px; /* Espaçamento interno */
+  word-wrap: break-word; /* Evita transbordo do texto */
+}
+
+.carousel-container {
+  display: flex; /* Layout flexível */
+  flex-direction: column; /* Alinha verticalmente */
+  align-items: center; /* Centraliza itens */
+  max-width: 50%; /* Largura máxima */
+}
+
+.carousel {
+  display: flex; /* Layout flexível */
+  width: 100%; /* Largura total */
+  height: 300px; /* Altura fixa */
+  overflow: hidden; /* Oculta elementos fora do container */
+  position: relative; /* Posicionamento relativo para controle interno */
+  transition: transform 0.5s ease-in-out; /* Movimento suave */
+}
+
+.carousel img {
+  width: 100%; /* Largura total da imagem */
+  height: 100%; /* Altura total */
+  object-fit: cover; /* Mantém proporções da imagem */
+}
+
+/* Estilo para botões de controle do carrossel */
+.controls {
+  display: flex; /* Layout flexível */
+  justify-content: center; /* Centraliza botões */
+  gap: 10px; /* Espaçamento entre botões */
+  margin-top: 10px; /* Espaçamento superior */
+}
+
+.controls button {
+  padding: 10px 20px; /* Espaçamento interno */
+  background-color: #333; /* Fundo escuro */
+  color: white; /* Texto branco */
+  border: none; /* Remove borda */
+  cursor: pointer; /* Mostra cursor de clique */
+  border-radius: 5px; /* Cantos arredondados */
+}
+
+.controls button:hover {
+  background-color: #555; /* Cor de fundo ao passar o mouse */
+}
