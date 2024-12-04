@@ -1,123 +1,209 @@
-/* Define o estilo padrão para todos os elementos */
-/* Dica: o uso do * afeta todos os elementos, então, tome cuidado para não sobrecarregar desnecessariamente cada componente. */
 * {
-    padding: 0; /* Remove o espaçamento interno padrão */
-    margin: 0; /* Remove o espaçamento externo padrão */
-    box-sizing: border-box; /* Garante que padding e border sejam incluídos nas dimensões */
-    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão */
-    border: 1px solid red; /* Apenas para debug - remova no ambiente de produção */
+    padding: 0; /* Remove o espaçamento interno de todos os elementos */
+    margin: 0; /* Remove a margem externa de todos os elementos */
+    box-sizing: border-box; /* Inclui o padding e borda no tamanho total do elemento */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão para todos os elementos */
+    border: 1px solid red; /* Insere uma borda vermelha em todos os elementos (provavelmente para debugging) */
+    /* SUGESTÃO: Remover a borda vermelha em produção, pois é apenas para teste. */
 }
 
-/* Estilização do header e footer */
-/* Melhorias: você pode usar padding para adicionar espaçamento interno ao invés de depender do conteúdo */
 header, footer {
-    background-color: #E3D5CA; /* Define uma cor de fundo suave */
+    background-color: #E3D5CA; /* Define a cor de fundo dos elementos */
     color: rgb(33, 51, 68); /* Define a cor do texto */
-    width: 100%; /* Garante que ambos ocupem toda a largura da tela */
+    width: 100%; /* Garante que ocupem toda a largura */
 }
 
-/* Estilo para o logo */
-/* Pode ser interessante usar rem ao invés de em para facilitar a responsividade */
 .logo {
-    font-size: 4em; /* Tamanho grande para destaque */
-    font-weight: bold; /* Deixa o texto em negrito */
+    font-size: 4em; /* Tamanho da fonte grande para chamar atenção */
+    font-weight: bold; /* Negrito para destaque */
 }
 
-/* Estilo específico para o texto com classe SophiaPicaskyAlberton */
 .SophiaPicaskyAlberton {
-    font-size: 1.8em; /* Tamanho moderado */
+    font-size: 1.8em; /* Tamanho moderado da fonte */
 }
 
-/* Decoração dos botões */
-/* Sugestão: Experimente o uso de variáveis CSS para facilitar mudanças nas cores */
+/* Decoração do botão */
 button {
-    -webkit-border-radius: 50px; /* Compatibilidade com navegadores mais antigos */
-    -moz-border-radius: 50px; /* Idem */
-    border-radius: 50px; /* Define bordas arredondadas */
-    color: #000000; /* Cor do texto */
-    font-family: Arial; /* Define a fonte */
-    font-size: 20px; /* Tamanho da fonte */
-    font-weight: 100; /* Peso fino para um design leve */
-    align-items: center; /* Alinhamento opcional */
-    padding: 10px; /* Espaçamento interno */
-    background-color: #C6A1CB; /* Cor de fundo */
-    border: solid #BD94BA 0; /* Remove bordas visíveis */
-    text-decoration: none; /* Remove sublinhado */
-    display: inline-block; /* Faz com que o botão tenha comportamento de inline */
-    cursor: pointer; /* Mostra o cursor de clique */
-    text-align: center; /* Centraliza o texto */
-}
-
-/* Estilo para o footer */
-/* Sugestão: para espaçamentos mais dinâmicos, considere usar unidades relativas como vh */
-footer {
-    bottom: 0; /* Fixa o footer no final */
-    text-align: center; /* Centraliza o conteúdo */
-    font-size: 22px; /* Tamanho da fonte */
-    padding: 100px 0; /* Espaçamento interno no topo e embaixo */
-}
-
-/* Estilo para o header, utilizando Flexbox */
-/* Considerar o uso de gap para espaçamento entre os elementos */
-header {
-    display: flex; /* Layout flexível */
-    align-items: center; /* Alinha verticalmente ao centro */
-    justify-content: space-around; /* Espaçamento igual entre os itens */
-}
-
-/* Nav UL e LI */
-/* Melhorias: Considere o uso de pseudo-classes para hover nos links */
-nav ul li {
-    list-style: none; /* Remove os marcadores */
-    display: inline-block; /* Faz com que os itens fiquem lado a lado */
-    border-radius: 50px; /* Bordas arredondadas */
+    -webkit-border-radius: 50px; /* Bordas arredondadas */
+    -moz-border-radius: 50px;
+    border-radius: 50px;
     color: #000000; /* Cor do texto */
     font-family: Arial; /* Fonte padrão */
-    font-size: 20px; /* Tamanho moderado */
-    font-weight: 100; /* Peso leve */
-    align-items: center; /* Alinhamento opcional */
+    font-size: 20px; /* Tamanho do texto */
+    font-weight: 100; /* Peso da fonte leve */
+    align-items: center; /* Alinhamento central (não impacta muito em elementos do tipo botão) */
     padding: 10px; /* Espaçamento interno */
-    background-color: #C6A1CB; /* Fundo */
-    border: solid #BD94BA 0; /* Remove borda visível */
+    background-color: #C6A1CB; /* Cor de fundo */
+    border: solid #BD94BA 0; /* Sem borda visível */
     text-decoration: none; /* Remove sublinhado */
-    display: inline-block; /* Comportamento de bloco inline */
-    cursor: pointer; /* Mostra o cursor de clique */
-    text-align: center; /* Centraliza texto */
+    display: inline-block; /* Garante que o botão se comporte como bloco em linha */
+    cursor: pointer; /* Mostra o cursor de mão */
+    text-align: center; /* Centraliza o texto */
+    /* SUGESTÃO: Simplificar o CSS para evitar propriedades redundantes. */
 }
 
-/* Estilo para links dentro do nav */
-/* Sugestão: Para foco em acessibilidade, use outline personalizado */
+footer {
+    bottom: 0; /* Fixa o rodapé na parte inferior */
+    text-align: center; /* Centraliza o texto */
+    font-size: 22px; /* Tamanho do texto */
+    padding: 100px 0; /* Adiciona espaçamento interno acima e abaixo */
+}
+
+header {
+    display: flex; /* Define layout flexível */
+    align-items: center; /* Alinha itens verticalmente ao centro */
+    justify-content: space-around; /* Distribui os itens uniformemente */
+}
+
+/* Separação de itens no header */
+.nav-links li {
+    padding: 0 20px; /* Espaçamento horizontal entre os itens */
+    /* SUGESTÃO: Ativar esse bloco caso necessário para espaçamento adicional. */
+}
+
+nav ul li {
+    list-style: none; /* Remove os marcadores padrão */
+    display: inline-block; /* Faz os itens ficarem lado a lado */
+    -webkit-border-radius: 50px; /* Bordas arredondadas */
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #000000; /* Cor do texto */
+    font-family: Arial; /* Define fonte padrão */
+    font-size: 20px; /* Define tamanho do texto */
+    font-weight: 100; /* Peso leve para a fonte */
+    align-items: center; /* Alinha itens verticalmente (pode ser redundante aqui) */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #C6A1CB; /* Define cor de fundo */
+    border: solid #BD94BA 0; /* Sem borda visível */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Itens em linha */
+    cursor: pointer; /* Cursor de mão */
+    text-align: center; /* Centraliza o conteúdo */
+    /* SUGESTÃO: Consolidar estilos similares com os botões para manter consistência. */
+}
+
 nav u li a {
     text-decoration: none; /* Remove sublinhado */
-    color: rgb(149, 0, 255); /* Cor do link */
-    font-size: 18px; /* Tamanho moderado */
-    padding: 0 15px; /* Espaçamento lateral */
+    color: rgb(149, 0, 255); /* Cor do texto */
+    font-size: 18px; /* Tamanho do texto */
+    padding: 0 15px; /* Espaçamento horizontal */
 }
 
-/* Formulário */
-/* Sugestão: Utilize variáveis CSS para definir espaçamentos padrão */
+/* Estilo do formulário */
 .form-container {
-    width: 60%; /* Define largura */
+    width: 60%; /* Largura do formulário */
     padding: 20px; /* Espaçamento interno */
     background-color: white; /* Fundo branco */
-    border-radius: 10px; /* Bordas arredondadas */
+    border-radius: 10px; /* Cantos arredondados */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
-/* Melhoria: Ajuste adicional pode ser feito para mobile com media queries */
+.form-container h1 {
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    color: #333; /* Cor do texto */
+}
 
-/* ... Outros estilos ... */
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px); /* Largura total menos espaçamento */
+    padding: 10px; /* Espaçamento interno */
+    margin-top: 5px; /* Espaçamento superior */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Bordas arredondadas */
+    outline: none; /* Remove contorno padrão */
+}
 
-/* Container principal com centralização */
-/* Melhorias: Considere o uso de grid para layouts mais complexos */
+label {
+    margin-top: 10px; /* Espaçamento superior */
+    display: block; /* Faz o rótulo ocupar toda a largura */
+    font-weight: bold; /* Negrito para destaque */
+}
+
+/* Continuação abaixo... */
+input:focus, textarea:focus {
+    border-color: #007bff; /* Muda a cor da borda quando o elemento está em foco */
+    outline: none; /* Remove a borda padrão que aparece ao focar */
+}
+
+/* Botão de envio */
+button {
+    padding: 10px; /* Espaçamento interno do botão */
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Deixa os cantos arredondados */
+    font-size: 16px; /* Define o tamanho da fonte */
+    cursor: pointer; /* Adiciona o cursor de "mãozinha" ao passar por cima */
+    transition: backgroud-color 0.3s; /* Adiciona uma transição suave na mudança de cor */
+    /* Melhorar: Há um pequeno erro de digitação em 'backgroud-color'; o correto é 'background-color'. */
+}
+
+button:hover {
+    background-color: #0056b3; /* Altera a cor de fundo quando o botão é "hovered" */
+}
+
+/* Container geral para layout do formulário e da imagem */
 .container {
-    display: flex; /* Flexbox para alinhamento */
-    width: 90%; /* Ocupa 90% da largura */
-    max-width: 1000px; /* Limita a largura máxima */
-    border: 1px solid #ddd; /* Borda cinza */
-    border-radius: 10px; /* Bordas arredondadas */
-    overflow: hidden; /* Esconde conteúdo que ultrapassa */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    display: flex; /* Define layout flexível */
+    width: 90%; /* O container ocupa 90% da largura da página */
+    max-width: 1000px; /* Limita a largura máxima a 1000px */
+    border: 1px solid #ddd; /* Adiciona uma borda cinza clara */
+    border-radius: 10px; /* Cantos arredondados */
+    overflow: hidden; /* Impede que o conteúdo "vaze" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
     padding: 20px; /* Espaçamento interno */
-    margin: 50px auto; /* Centraliza horizontalmente e adiciona margem superior */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 50px auto; /* Adiciona um espaçamento de 50px acima e abaixo */
+    /* Melhorar: Centralizar poderia ser simplificado com margin apenas uma vez. */
+}
+
+.image-container {
+    flex: 1; /* Divide o espaço igualmente com o formulário */
+    background-color: #e0e0e0; /* Cor de fundo cinza claro */
+}
+
+.image-container img {
+    width: 100%; /* Imagem ocupa toda a largura */
+    height: 100%; /* Imagem ocupa toda a altura */
+    object-fit: cover; /* Ajusta a imagem para cobrir sem distorcer */
+}
+
+.form-container {
+    flex: 1; /* Divide o espaço igualmente com a imagem */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #ffffff; /* Fundo branco */
+}
+
+form {
+    display: flex; /* Torna o formulário flexível */
+    flex-direction: column; /* Coloca os itens na vertical */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+
+label {
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-bottom: 5px; /* Adiciona espaçamento abaixo do rótulo */
+}
+
+input, textarea, button {
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 1rem; /* Define o tamanho da fonte */
+}
+
+/* Botão dentro do formulário */
+button {
+    background-color: #007bff; /* Cor azul */
+    color: white; /* Texto branco */
+    cursor: pointer; /* Mostra cursor pointer */
+    border: none; /* Remove a borda */
+    transition: background-color 0.3s; /* Adiciona uma transição suave */
+}
+
+button:hover {
+    background-color: #0056b3; /* Altera a cor no hover */
 }
