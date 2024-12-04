@@ -16,13 +16,16 @@ header, footer {
 
 /* Estilo para o logotipo */
 .logo {
-  font-size: 4em; /* Tamanho grande para o texto do logotipo */
+  font-size: 6em; /* Tamanho grande para o texto do logotipo */
   font-weight: bold; /* Deixa o texto em negrito */
+
 }
 
 /* Estilo para elementos com a classe SophiaPicaskyAlberton */
 .SophiaPicaskyAlberton {
   font-size: 1.8em; /* Define um tamanho de fonte maior */
+  margin-left: 0; /* Alinha o texto à direita dentro de seu container */
+  margin-right: ; /* Certifica-se de que não há margem à direita */
 }
 
 /* Define espaçamento horizontal entre itens da lista de links */
@@ -90,12 +93,22 @@ nav ul li {
 }
 
 /* Estilo para links dentro de navegação */
-nav u li a {
+
+nav ul li a {
   text-decoration: none; /* Remove sublinhado */
-  color: rgb(89, 255, 0); /* Cor do texto */
+  color: rgb(58, 0, 34); /* Cor do texto */
   font-size: 18px; /* Tamanho da fonte */
   padding: 0 15px; /* Espaçamento interno horizontal */
+  transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Transições suaves para a cor, transformação e o tamanho da fonte */
 }
+
+/* Efeito de hover para os links de navegação */
+nav ul li a:hover {
+  color: #4f0083; /* Cor do texto quando o cursor passa */
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho do texto */
+  font-size: 20px; /* Aumenta o tamanho da fonte durante o hover */
+}
+
 
 /* Estilo genérico para seções */
 section {
@@ -173,12 +186,23 @@ main {
   opacity: 1;
 }
 
-.buttons {
-  margin-top: 10px;
+  .buttons {
+    margin-top: 10px;
+    display: flex; /* Usar Flexbox */
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+    margin-top: 0px; /* Espaçamento superior */
+    height: 50px; /* Ajusta a altura da div para permitir alinhamento vertical */
+  }
+button:hover{
+  color: #4f0083; /* Cor do texto quando o cursor passa */
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho do texto */
+  font-size: 20px; /* Aumenta o tamanho da fonte durante o hover */
+  transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Transições suaves para a cor, transformação e o tamanho da fonte */
 }
-
 button {
   padding: 10px;
   margin: 0 5px;
   cursor: pointer;
 }
+

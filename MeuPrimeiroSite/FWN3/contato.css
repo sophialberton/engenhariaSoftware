@@ -137,6 +137,8 @@ button {
     border-radius: 5px; /* Deixa os cantos arredondados */
     font-size: 16px; /* Define o tamanho da fonte */
     cursor: pointer; /* Adiciona o cursor de "mãozinha" ao passar por cima */
+
+    
     transition: backgroud-color 0.3s; /* Adiciona uma transição suave na mudança de cor */
     /* Melhorar: Há um pequeno erro de digitação em 'backgroud-color'; o correto é 'background-color'. */
 }
