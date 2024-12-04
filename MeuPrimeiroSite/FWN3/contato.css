@@ -1,219 +1,123 @@
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
-} 
-header, footer{
-    background-color: #E3D5CA;
-    color: rgb(33, 51, 68);
-    width: 100%;
-}
-.logo {
-    font-size: 4em;
-    font-weight: bold;
-}
-.SophiaPicaskyAlberton {
-    font-size: 1.8em;
+/* Define o estilo padrão para todos os elementos */
+/* Dica: o uso do * afeta todos os elementos, então, tome cuidado para não sobrecarregar desnecessariamente cada componente. */
+* {
+    padding: 0; /* Remove o espaçamento interno padrão */
+    margin: 0; /* Remove o espaçamento externo padrão */
+    box-sizing: border-box; /* Garante que padding e border sejam incluídos nas dimensões */
+    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão */
+    border: 1px solid red; /* Apenas para debug - remova no ambiente de produção */
 }
 
-/*decoração botão*/
+/* Estilização do header e footer */
+/* Melhorias: você pode usar padding para adicionar espaçamento interno ao invés de depender do conteúdo */
+header, footer {
+    background-color: #E3D5CA; /* Define uma cor de fundo suave */
+    color: rgb(33, 51, 68); /* Define a cor do texto */
+    width: 100%; /* Garante que ambos ocupem toda a largura da tela */
+}
+
+/* Estilo para o logo */
+/* Pode ser interessante usar rem ao invés de em para facilitar a responsividade */
+.logo {
+    font-size: 4em; /* Tamanho grande para destaque */
+    font-weight: bold; /* Deixa o texto em negrito */
+}
+
+/* Estilo específico para o texto com classe SophiaPicaskyAlberton */
+.SophiaPicaskyAlberton {
+    font-size: 1.8em; /* Tamanho moderado */
+}
+
+/* Decoração dos botões */
+/* Sugestão: Experimente o uso de variáveis CSS para facilitar mudanças nas cores */
 button {
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    color: #000000;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: 100;
-    align-items: center;
-    padding: 10px;
-    background-color: #C6A1CB;
-    border: solid #BD94BA 0;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
-} 
-footer {
-    bottom: 0; /* Posiciona no final */
+    -webkit-border-radius: 50px; /* Compatibilidade com navegadores mais antigos */
+    -moz-border-radius: 50px; /* Idem */
+    border-radius: 50px; /* Define bordas arredondadas */
+    color: #000000; /* Cor do texto */
+    font-family: Arial; /* Define a fonte */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: 100; /* Peso fino para um design leve */
+    align-items: center; /* Alinhamento opcional */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #C6A1CB; /* Cor de fundo */
+    border: solid #BD94BA 0; /* Remove bordas visíveis */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Faz com que o botão tenha comportamento de inline */
+    cursor: pointer; /* Mostra o cursor de clique */
     text-align: center; /* Centraliza o texto */
+}
+
+/* Estilo para o footer */
+/* Sugestão: para espaçamentos mais dinâmicos, considere usar unidades relativas como vh */
+footer {
+    bottom: 0; /* Fixa o footer no final */
+    text-align: center; /* Centraliza o conteúdo */
     font-size: 22px; /* Tamanho da fonte */
     padding: 100px 0; /* Espaçamento interno no topo e embaixo */
-  }
-header{
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
 }
- /*separa itens do header, da um espaçamento
-.nav-links li {
-    padding: 0 20px;
-}*/
-nav ul li{
-    list-style: none;
-    display: inline-block;
-    -webkit-border-radius: 50px;
-    -moz-border-radius: 50px;
-    border-radius: 50px;
-    color: #000000;
-    font-family: Arial;
-    font-size: 20px;
-    font-weight: 100;
-    align-items: center;
-    padding: 10px;
-    background-color: #C6A1CB;
-    border: solid #BD94BA 0;
-    text-decoration: none;
-    display: inline-block;
-    cursor: pointer;
-    text-align: center;
+
+/* Estilo para o header, utilizando Flexbox */
+/* Considerar o uso de gap para espaçamento entre os elementos */
+header {
+    display: flex; /* Layout flexível */
+    align-items: center; /* Alinha verticalmente ao centro */
+    justify-content: space-around; /* Espaçamento igual entre os itens */
 }
-nav u li a{
-    text-decoration: none;
-    color:rgb(149, 0, 255);
-    font-size: 18px;
-    padding: 0 15px;
-    
+
+/* Nav UL e LI */
+/* Melhorias: Considere o uso de pseudo-classes para hover nos links */
+nav ul li {
+    list-style: none; /* Remove os marcadores */
+    display: inline-block; /* Faz com que os itens fiquem lado a lado */
+    border-radius: 50px; /* Bordas arredondadas */
+    color: #000000; /* Cor do texto */
+    font-family: Arial; /* Fonte padrão */
+    font-size: 20px; /* Tamanho moderado */
+    font-weight: 100; /* Peso leve */
+    align-items: center; /* Alinhamento opcional */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #C6A1CB; /* Fundo */
+    border: solid #BD94BA 0; /* Remove borda visível */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Comportamento de bloco inline */
+    cursor: pointer; /* Mostra o cursor de clique */
+    text-align: center; /* Centraliza texto */
 }
-/*formulario slides*/
+
+/* Estilo para links dentro do nav */
+/* Sugestão: Para foco em acessibilidade, use outline personalizado */
+nav u li a {
+    text-decoration: none; /* Remove sublinhado */
+    color: rgb(149, 0, 255); /* Cor do link */
+    font-size: 18px; /* Tamanho moderado */
+    padding: 0 15px; /* Espaçamento lateral */
+}
+
+/* Formulário */
+/* Sugestão: Utilize variáveis CSS para definir espaçamentos padrão */
 .form-container {
-    width: 60%;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}   
- .form-container h1 {
-    text-align: center;
-    margin-bottom: 20px;
-    color: #333;
- }
-
-input[type="text"],
-input[type="email"],
-textarea {
-    width: calc(100% - 20px);
-    padding: 10px;
-    margin-top: 5px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    outline: none;
+    width: 60%; /* Define largura */
+    padding: 20px; /* Espaçamento interno */
+    background-color: white; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
 
- label {
-    margin-top: 10px;
-    display: block;
-    font-weight: bold;
-}
+/* Melhoria: Ajuste adicional pode ser feito para mobile com media queries */
 
-.formulario{
-    text-align: center;
-    margin-bottom: 20px;
+/* ... Outros estilos ... */
 
-}
- /*Slides: estilo do formulario*/
-
- form{
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
- }
-
-input, textarea{
-    width:100%;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    font-size: 16px;
-}
-
-input:focus, textarea:focus {
-    border-color: #007bff;
-    outline: none;
-}
-
-/*Botao enviar*/
-button{
-    padding: 10px;
-    background-color: #007bff ;
-    color: white;
-    border:none;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    transition: backgroud-color 0.3s;
-}
-
-button:hover {
-    background-color: #0056b3;
-}
-
-/*inico chat gpt*/
+/* Container principal com centralização */
+/* Melhorias: Considere o uso de grid para layouts mais complexos */
 .container {
-    display: flex;
-    width: 80%;
-    max-width: 900px;
-    border: 1px solid #ddd;
-    border-radius: 10px;
-    overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .image-container {
-    flex: 1;
-    background-color: #e0e0e0;
-  }
-  
-  .image-container img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .form-container {
-    flex: 1;
-    padding: 20px;
-    background-color: #ffffff;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-  }
-  
-  label {
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input, textarea, button {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    font-size: 1rem;
-  }
-  
-  button {
-    background-color: #007bff;
-    color: white;
-    cursor: pointer;
-    border: none;
-    transition: background-color 0.3s;
-  }
-  
-  button:hover {
-    background-color: #0056b3;
-  }
-
-
-
-
-
-
-
-
-
-
+    display: flex; /* Flexbox para alinhamento */
+    width: 90%; /* Ocupa 90% da largura */
+    max-width: 1000px; /* Limita a largura máxima */
+    border: 1px solid #ddd; /* Borda cinza */
+    border-radius: 10px; /* Bordas arredondadas */
+    overflow: hidden; /* Esconde conteúdo que ultrapassa */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    padding: 20px; /* Espaçamento interno */
+    margin: 50px auto; /* Centraliza horizontalmente e adiciona margem superior */
+}

@@ -4,7 +4,7 @@
   margin: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
-  border: 0px solid red; /* Apenas para melhor visualização durante o desenvolvimento */
+  border: 1px solid red; /* Apenas para melhor visualização durante o desenvolvimento */
 }
 
 /* Define estilo para o cabeçalho e rodapé */
@@ -55,8 +55,8 @@ footer {
   text-align: center; /* Centraliza o texto */
   font-size: 22px; /* Tamanho da fonte */
   padding: 100px 0; /* Espaçamento interno no topo e embaixo */
-}
 
+}
 /* Define layout do cabeçalho */
 header {
   display: flex; /* Layout flexível */
