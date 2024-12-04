@@ -12,3 +12,9 @@ form.addEventListener('submit', function(event){
     successMessage.style.display = 'block';//Exibe a mensagem de sucesso
 
 });
+
+//COdigo chat gpt
+document.querySelector('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    alert('Formulário enviado com sucesso!');
+  });
