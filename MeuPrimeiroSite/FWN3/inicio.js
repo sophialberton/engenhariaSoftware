@@ -3,10 +3,25 @@ function EnviarFormulario() {
 }
 
 //javascript do chat gpt
-let currentIndex = 0;
 const images = document.querySelectorAll('.carousel-image');
+const buttons = document.querySelectorAll('.buttons button');
+let currentIndex = 0;
+
 function changeImage(index) {
-    images[currentIndex].classList.remove('active'); // Remove a classe "active" da imagem atual
-    currentIndex = index; // Atualiza o índice da imagem ativa
-    images[currentIndex].classList.add('active'); // Adiciona a classe "active" à nova imagem
+  // Remove classe 'active' da imagem e do botão atuais
+  images[currentIndex].classList.remove('active');
+  buttons[currentIndex].classList.remove('active');
+  
+  // Atualiza o índice atual
+  currentIndex = index;
+  
+  // Adiciona classe 'active' à nova imagem e ao novo botão
+  images[currentIndex].classList.add('active');
+  buttons[currentIndex].classList.add('active');
 }
+
+// Exemplo: Alterar para a próxima imagem a cada 3 segundos
+setInterval(() => {
+  const nextIndex = (currentIndex + 1) % images.length;
+  changeImage(nextIndex);
+}, 3000);

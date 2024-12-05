@@ -4,7 +4,6 @@
     box-sizing: border-box; /* Inclui o padding e borda no tamanho total do elemento */
     font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão para todos os elementos */
     border: 1px solid red; /* Insere uma borda vermelha em todos os elementos (provavelmente para debugging) */
-    /* SUGESTÃO: Remover a borda vermelha em produção, pois é apenas para teste. */
 }
 
 header, footer {
@@ -151,20 +150,22 @@ button:hover {
 .container {
     display: flex; /* Define layout flexível */
     width: 90%; /* O container ocupa 90% da largura da página */
-    max-width: 1000px; /* Limita a largura máxima a 1000px */
+    max-width: 10000px; /* Limita a largura máxima a 1000px */
     border: 1px solid #ddd; /* Adiciona uma borda cinza clara */
     border-radius: 10px; /* Cantos arredondados */
     overflow: hidden; /* Impede que o conteúdo "vaze" */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
     padding: 20px; /* Espaçamento interno */
     margin: 0 auto; /* Centraliza horizontalmente */
-    margin: 50px auto; /* Adiciona um espaçamento de 50px acima e abaixo */
+    margin: 20px auto; /* Adiciona um espaçamento de 50px acima e abaixo */
     /* Melhorar: Centralizar poderia ser simplificado com margin apenas uma vez. */
 }
 
 .image-container {
     flex: 1; /* Divide o espaço igualmente com o formulário */
     background-color: #e0e0e0; /* Cor de fundo cinza claro */
+    display: flex; /* Para permitir o controle do conteúdo flexível */
+    justify-content: center; /* Alinha a imagem horizontalmente no centro */
 }
 
 .image-container img {
