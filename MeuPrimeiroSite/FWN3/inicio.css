@@ -13,26 +13,99 @@ header, footer {
   color: rgb(33, 51, 68); /* Cor do texto */
   width: 100%; /* Ocupa toda a largura */
 }
-
+/* Estilo para o rodapé */
+footer {
+  bottom: 0; /* Posiciona no final */
+  text-align: center; /* Centraliza o texto */
+  font-size: 22px; /* Tamanho da fonte */
+  padding: 100px 0; /* Espaçamento interno no topo e embaixo */
+}
+/* Define layout do cabeçalho */
+header {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha itens no centro verticalmente */
+  justify-content: space-around; /* Distribui itens com espaçamento uniforme */
+}
+/* Estilo para itens de lista dentro da navegação */
+nav ul li {
+  list-style: none; /* Remove marcações da lista */
+  display: inline-block; /* Exibe como bloco inline */
+}
+/* Estilo para links dentro de navegação */
+nav ul li a {
+  text-decoration: none; /* Remove sublinhado */
+  color: rgb(58, 0, 34); /* Cor do texto */
+  font-size: 18px; /* Tamanho da fonte */
+  padding: 0 15px; /* Espaçamento interno horizontal */
+  transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Transições suaves para a cor, transformação e o tamanho da fonte */
+}
+/* Efeito de hover para os links de navegação */
+nav ul li a:hover {
+  color: #4f0083; /* Cor do texto quando o cursor passa */
+  transform: scale(1.1); /* Aumenta ligeiramente o tamanho do texto */
+  font-size: 20px; /* Aumenta o tamanho da fonte durante o hover */
+}
+/* Define espaçamento horizontal entre itens da lista de links */
+.nav-links li {
+  padding: 0 20px;
+}
 /* Estilo para o logotipo */
 .logo {
   font-size: 4em; /* Tamanho grande para o texto do logotipo */
   font-weight: bold; /* Deixa o texto em negrito */
 
 }
-
 /* Estilo para elementos com a classe SophiaPicaskyAlberton */
 .SophiaPicaskyAlberton {
   font-size: 1.8em; /* Define um tamanho de fonte maior */
   margin-left: 0; /* Alinha o texto à direita dentro de seu container */
   margin-right: ; /* Certifica-se de que não há margem à direita */
 }
-
-/* Define espaçamento horizontal entre itens da lista de links */
-.nav-links li {
-  padding: 0 20px;
+/*Com ajuda do Chat gpt as divisórias do footer*/
+.footer-div {
+  display: flex; /* Cria um layout em linha usando Flexbox */
+  justify-content: space-between; /* Distribui as divisórias com espaçamento entre elas */
+  align-items: center; /* Alinha verticalmente no centro */
+  height: 10vh; /* Altura da área do rodapé */
+  padding: 10px;
+  background-color: #E3D5CA;
 }
-
+.lado-direito,
+.lado-meio,
+.lado-esquerdo {
+  flex: 1; /* Garante que todas as divisórias tenham o mesmo tamanho */
+  padding: 50px;
+  box-sizing: border-box; /* Inclui o padding dentro da largura e altura */
+}
+.lado-direito {
+  text-align: right; /* Alinha o conteúdo do lado direito à direita */
+}
+.lado-meio {
+  text-align: center; /* Centraliza o conteúdo do meio */
+}
+.lado-esquerdo {
+  text-align: left; /* Alinha o conteúdo do lado esquerdo à esquerda */
+}
+/*para botoes de controle*/
+.buttons button {
+  background-color: #f3f3f3; /* Cor de fundo padrão */
+  border: none; /* Remove bordas padrão */
+  border-radius: 20px; /* Bordas arredondadas */
+  padding: 10px 15px;
+  margin: 0 5px; /* Espaçamento entre os botões */
+  cursor: pointer; /* Indica que é clicável */
+  transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+}
+.buttons button:hover {
+  background-color: #d3c5ff; /* Cor ao passar o mouse */
+  transform: scale(1.1); /* Aumenta ligeiramente */
+}
+.buttons button.active {
+  background-color: #4f0083; /* Cor de destaque para o botão ativo */
+  color: #fff; /* Cor do texto */
+  font-weight: bold; /* Texto em negrito */
+  transform: scale(1.2); /* Aumenta ligeiramente o botão ativo */
+}
 /* Estilo para os botões */
 button {
   -webkit-border-radius: 50px; /* Borda arredondada (compatibilidade WebKit) */
@@ -51,22 +124,6 @@ button {
   cursor: pointer; /* Mostra o cursor de clique */
   text-align: center; /* Centraliza o texto */
 }
-
-/* Estilo para o rodapé */
-footer {
-  bottom: 0; /* Posiciona no final */
-  text-align: center; /* Centraliza o texto */
-  font-size: 22px; /* Tamanho da fonte */
-  padding: 100px 0; /* Espaçamento interno no topo e embaixo */
-
-}
-/* Define layout do cabeçalho */
-header {
-  display: flex; /* Layout flexível */
-  align-items: center; /* Alinha itens no centro verticalmente */
-  justify-content: space-around; /* Distribui itens com espaçamento uniforme */
-}
-
 /* Estilo alternativo para botões */
 .botao {
   -webkit-border-radius: 50px;
@@ -86,63 +143,12 @@ header {
   text-align: center;
   transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
 }
-
 .botao:hover {
   color: #4f0083;
   transform: scale(1.1);
   font-size: 20px;
 }
 
-/* Estilo para itens de lista dentro da navegação */
-nav ul li {
-  list-style: none; /* Remove marcações da lista */
-  display: inline-block; /* Exibe como bloco inline */
-}
-
-/* Estilo para links dentro de navegação */
-
-nav ul li a {
-  text-decoration: none; /* Remove sublinhado */
-  color: rgb(58, 0, 34); /* Cor do texto */
-  font-size: 18px; /* Tamanho da fonte */
-  padding: 0 15px; /* Espaçamento interno horizontal */
-  transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Transições suaves para a cor, transformação e o tamanho da fonte */
-}
-
-/* Efeito de hover para os links de navegação */
-nav ul li a:hover {
-  color: #4f0083; /* Cor do texto quando o cursor passa */
-  transform: scale(1.1); /* Aumenta ligeiramente o tamanho do texto */
-  font-size: 20px; /* Aumenta o tamanho da fonte durante o hover */
-}
-
-
-/* Estilo genérico para seções */
-section {
-  padding: 20px; /* Espaçamento interno */
-  margin: 20px; /* Espaçamento externo */
-  background-color: white; /* Cor de fundo */
-  border-radius: 8px; /* Cantos arredondados */
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-}
-
-/* Estilo para blocos de exemplo */
-.example {
-  padding: 10px; /* Espaçamento interno */
-  background-color: #e8f5e9; /* Cor de fundo suave */
-  border-left: 4px solid #4CAF50; /* Barra verde à esquerda */
-  margin-bottom: 20px; /* Espaçamento externo inferior */
-}
-
-/* Estilo para blocos de código */
-.code {
-  background: #333; /* Fundo escuro */
-  color: #fff; /* Texto branco */
-  padding: 10px; /* Espaçamento interno */
-  font-family: monospace; /* Fonte monoespaçada */
-  overflow-x: auto; /* Rolagem horizontal se necessário */
-  border-radius: 5px; /* Cantos arredondados */
-}
 
 /* Estilo para o carrossel */
 main {
@@ -151,7 +157,6 @@ main {
   margin-top: 0px; /* Espaçamento superior */
   background-color: #E3D5CA; /* Cor de fundo */
 }
-
 .container {
   display: flex;
   justify-content: space-between;
@@ -159,19 +164,16 @@ main {
   padding: 20px;
   background-color: #E3D5CA;
 }
-
 .left-side {
   flex: 1;
   padding-right: 900px;
   padding-right: 0px;
   align-items: center;
 }
-
 .right-side {
   flex: 1;
   position: relative;
 }
-
 .carousel {
   width: 100%;
   height: 300px; /* Ajuste conforme o tamanho desejado */
@@ -181,10 +183,7 @@ main {
   display: flex; /* Ativa flexbox */
   justify-content: center; /* Centraliza as imagens horizontalmente */
   align-items: center; /* Centraliza as imagens verticalmente */
-
-
 }
-
 .carousel-image {
   width: 60%; /* Ajusta automaticamente a largura */
   height: 100%; /* Ajusta a altura total do container */
@@ -196,25 +195,23 @@ main {
   opacity: 0; /* Define a opacidade inicial */
   transition: opacity 0.5s ease; /* Animação suave */
   border-radius: 40px; /* Mantém o arredondamento */
-  background-color: #4CAF50;
+  background-color: #C6A1CB;
+  object-fit: cover; /* Para imagem ocupar tudo sem ficar esticada */
 }
-
 .carousel-image.active {
   opacity: 1; /* Imagem ativa visível */
   z-index: 1; /* Garante que fique acima das outras */
 }
-
-
-  .buttons {
-    margin-top: 10px;
-    display: flex; /* Usar Flexbox */
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    align-items: center; /* Centraliza os botões verticalmente */
-    margin-top: 0px; /* Espaçamento superior */
-    height: 50px; /* Ajusta a altura da div para permitir alinhamento vertical */
-  }
+.buttons {
+  margin-top: 10px;
+  display: flex; /* Usar Flexbox */
+  justify-content: center; /* Centraliza os botões horizontalmente */
+  align-items: center; /* Centraliza os botões verticalmente */
+  margin-top: 0px; /* Espaçamento superior */
+  height: 50px; /* Ajusta a altura da div para permitir alinhamento vertical */
+}
 button:hover{
-  color: #4f0083; /* Cor do texto quando o cursor passa */
+  color: #E3D5CA; /* Cor do texto quando o cursor passa */
   transform: scale(1.1); /* Aumenta ligeiramente o tamanho do texto */
   font-size: 20px; /* Aumenta o tamanho da fonte durante o hover */
   transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Transições suaves para a cor, transformação e o tamanho da fonte */
@@ -224,57 +221,29 @@ button {
   margin: 0 5px;
   cursor: pointer;
 }
-/*Com ajuda do Chat gpt as divisórias do footer*/
-.footer-div {
-  display: flex; /* Cria um layout em linha usando Flexbox */
-  justify-content: space-between; /* Distribui as divisórias com espaçamento entre elas */
-  align-items: center; /* Alinha verticalmente no centro */
-  height: 10vh; /* Altura da área do rodapé */
-  padding: 10px;
-  background-color: #E3D5CA;
+
+/* Apagar dps */
+/* Estilo genérico para seções */
+section {
+  padding: 20px; /* Espaçamento interno */
+  margin: 20px; /* Espaçamento externo */
+  background-color: white; /* Cor de fundo */
+  border-radius: 8px; /* Cantos arredondados */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
 }
-
-.lado-direito,
-.lado-meio,
-.lado-esquerdo {
-  flex: 1; /* Garante que todas as divisórias tenham o mesmo tamanho */
-  padding: 50px;
-  box-sizing: border-box; /* Inclui o padding dentro da largura e altura */
+/* Estilo para blocos de exemplo */
+.example {
+  padding: 10px; /* Espaçamento interno */
+  background-color: #e8f5e9; /* Cor de fundo suave */
+  border-left: 4px solid #4CAF50; /* Barra verde à esquerda */
+  margin-bottom: 20px; /* Espaçamento externo inferior */
 }
-
-.lado-direito {
-  text-align: right; /* Alinha o conteúdo do lado direito à direita */
+/* Estilo para blocos de código */
+.code {
+  background: #333; /* Fundo escuro */
+  color: #fff; /* Texto branco */
+  padding: 10px; /* Espaçamento interno */
+  font-family: monospace; /* Fonte monoespaçada */
+  overflow-x: auto; /* Rolagem horizontal se necessário */
+  border-radius: 5px; /* Cantos arredondados */
 }
-
-.lado-meio {
-  text-align: center; /* Centraliza o conteúdo do meio */
-}
-
-.lado-esquerdo {
-  text-align: left; /* Alinha o conteúdo do lado esquerdo à esquerda */
-}
-/*para botoes de controle*/
-
-.buttons button {
-  background-color: #f3f3f3; /* Cor de fundo padrão */
-  border: none; /* Remove bordas padrão */
-  border-radius: 20px; /* Bordas arredondadas */
-  padding: 10px 15px;
-  margin: 0 5px; /* Espaçamento entre os botões */
-  cursor: pointer; /* Indica que é clicável */
-  transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
-}
-
-.buttons button:hover {
-  background-color: #d3c5ff; /* Cor ao passar o mouse */
-  transform: scale(1.1); /* Aumenta ligeiramente */
-}
-
-.buttons button.active {
-  background-color: #4f0083; /* Cor de destaque para o botão ativo */
-  color: #fff; /* Cor do texto */
-  font-weight: bold; /* Texto em negrito */
-  transform: scale(1.2); /* Aumenta ligeiramente o botão ativo */
-}
-
-

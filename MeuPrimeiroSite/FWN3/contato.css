@@ -1,93 +1,154 @@
-* {
-    padding: 0; /* Remove o espaçamento interno de todos os elementos */
-    margin: 0; /* Remove a margem externa de todos os elementos */
-    box-sizing: border-box; /* Inclui o padding e borda no tamanho total do elemento */
-    font-family: Arial, Helvetica, sans-serif; /* Define a fonte padrão para todos os elementos */
-    border: 1px solid red; /* Insere uma borda vermelha em todos os elementos (provavelmente para debugging) */
-}
-
-header, footer {
-    background-color: #E3D5CA; /* Define a cor de fundo dos elementos */
-    color: rgb(33, 51, 68); /* Define a cor do texto */
-    width: 100%; /* Garante que ocupem toda a largura */
-}
-
-.logo {
-    font-size: 4em; /* Tamanho da fonte grande para chamar atenção */
-    font-weight: bold; /* Negrito para destaque */
-}
-
-.SophiaPicaskyAlberton {
-    font-size: 1.8em; /* Tamanho moderado da fonte */
-}
-
-/* Decoração do botão */
-button {
-    -webkit-border-radius: 50px; /* Bordas arredondadas */
-    -moz-border-radius: 50px;
-    border-radius: 50px;
+/* Remove margens e espaçamentos padrão, define o modelo de caixa e fontes padrão */
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0px solid red; /* Apenas para melhor visualização durante o desenvolvimento */
+  }
+  
+  /* Define estilo para o cabeçalho e rodapé */
+  header, footer {
+    background-color: #E3D5CA; /* Cor de fundo */
+    color: rgb(33, 51, 68); /* Cor do texto */
+    width: 100%; /* Ocupa toda a largura */
+  }
+  /* Estilo para o rodapé */
+  footer {
+    bottom: 0; /* Posiciona no final */
+    text-align: center; /* Centraliza o texto */
+    font-size: 22px; /* Tamanho da fonte */
+    padding: 100px 0; /* Espaçamento interno no topo e embaixo */
+  }
+  /* Define layout do cabeçalho */
+  header {
+    display: flex; /* Layout flexível */
+    align-items: center; /* Alinha itens no centro verticalmente */
+    justify-content: space-around; /* Distribui itens com espaçamento uniforme */
+  }
+  /* Estilo para itens de lista dentro da navegação */
+  nav ul li {
+    list-style: none; /* Remove marcações da lista */
+    display: inline-block; /* Exibe como bloco inline */
+  }
+  /* Estilo para links dentro de navegação */
+  nav ul li a {
+    text-decoration: none; /* Remove sublinhado */
+    color: rgb(58, 0, 34); /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+    padding: 0 15px; /* Espaçamento interno horizontal */
+    transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Transições suaves para a cor, transformação e o tamanho da fonte */
+  }
+  /* Efeito de hover para os links de navegação */
+  nav ul li a:hover {
+    color: #4f0083; /* Cor do texto quando o cursor passa */
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho do texto */
+    font-size: 20px; /* Aumenta o tamanho da fonte durante o hover */
+  }
+  /* Define espaçamento horizontal entre itens da lista de links */
+  .nav-links li {
+    padding: 0 20px;
+  }
+  /* Estilo para o logotipo */
+  .logo {
+    font-size: 4em; /* Tamanho grande para o texto do logotipo */
+    font-weight: bold; /* Deixa o texto em negrito */
+  
+  }
+  /* Estilo para elementos com a classe SophiaPicaskyAlberton */
+  .SophiaPicaskyAlberton {
+    font-size: 1.8em; /* Define um tamanho de fonte maior */
+    margin-left: 0; /* Alinha o texto à direita dentro de seu container */
+    margin-right: ; /* Certifica-se de que não há margem à direita */
+  }
+  /*Com ajuda do Chat gpt as divisórias do footer*/
+  .footer-div {
+    display: flex; /* Cria um layout em linha usando Flexbox */
+    justify-content: space-between; /* Distribui as divisórias com espaçamento entre elas */
+    align-items: center; /* Alinha verticalmente no centro */
+    height: 10vh; /* Altura da área do rodapé */
+    padding: 10px;
+    background-color: #E3D5CA;
+  }
+  .lado-direito,
+  .lado-meio,
+  .lado-esquerdo {
+    flex: 1; /* Garante que todas as divisórias tenham o mesmo tamanho */
+    padding: 50px;
+    box-sizing: border-box; /* Inclui o padding dentro da largura e altura */
+  }
+  .lado-direito {
+    text-align: right; /* Alinha o conteúdo do lado direito à direita */
+  }
+  .lado-meio {
+    text-align: center; /* Centraliza o conteúdo do meio */
+  }
+  .lado-esquerdo {
+    text-align: left; /* Alinha o conteúdo do lado esquerdo à esquerda */
+  }
+  /*para botoes de controle*/
+  .buttons button {
+    background-color: #f3f3f3; /* Cor de fundo padrão */
+    border: none; /* Remove bordas padrão */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 10px 15px;
+    margin: 0 5px; /* Espaçamento entre os botões */
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+  }
+  .buttons button:hover {
+    background-color: #d3c5ff; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Aumenta ligeiramente */
+  }
+  .buttons button.active {
+    background-color: #4f0083; /* Cor de destaque para o botão ativo */
+    color: #fff; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    transform: scale(1.2); /* Aumenta ligeiramente o botão ativo */
+  }
+  /* Estilo para os botões */
+  button {
+    -webkit-border-radius: 50px; /* Borda arredondada (compatibilidade WebKit) */
+    -moz-border-radius: 50px; /* Borda arredondada (compatibilidade Firefox antigo) */
+    border-radius: 50px; /* Borda arredondada */
     color: #000000; /* Cor do texto */
-    font-family: Arial; /* Fonte padrão */
-    font-size: 20px; /* Tamanho do texto */
-    font-weight: 100; /* Peso da fonte leve */
-    align-items: center; /* Alinhamento central (não impacta muito em elementos do tipo botão) */
+    font-family: Arial; /* Fonte do texto */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: 100; /* Peso da fonte mais fino */
+    align-items: center; /* Alinha o conteúdo centralmente */
     padding: 10px; /* Espaçamento interno */
     background-color: #C6A1CB; /* Cor de fundo */
     border: solid #BD94BA 0; /* Sem borda visível */
     text-decoration: none; /* Remove sublinhado */
-    display: inline-block; /* Garante que o botão se comporte como bloco em linha */
-    cursor: pointer; /* Mostra o cursor de mão */
+    display: inline-block; /* Exibe como bloco inline */
+    cursor: pointer; /* Mostra o cursor de clique */
     text-align: center; /* Centraliza o texto */
-    /* SUGESTÃO: Simplificar o CSS para evitar propriedades redundantes. */
-}
-
-footer {
-    bottom: 0; /* Fixa o rodapé na parte inferior */
-    text-align: center; /* Centraliza o texto */
-    font-size: 22px; /* Tamanho do texto */
-    padding: 100px 0; /* Adiciona espaçamento interno acima e abaixo */
-}
-
-header {
-    display: flex; /* Define layout flexível */
-    align-items: center; /* Alinha itens verticalmente ao centro */
-    justify-content: space-around; /* Distribui os itens uniformemente */
-}
-
-/* Separação de itens no header */
-.nav-links li {
-    padding: 0 20px; /* Espaçamento horizontal entre os itens */
-    /* SUGESTÃO: Ativar esse bloco caso necessário para espaçamento adicional. */
-}
-
-nav ul li {
-    list-style: none; /* Remove os marcadores padrão */
-    display: inline-block; /* Faz os itens ficarem lado a lado */
-    -webkit-border-radius: 50px; /* Bordas arredondadas */
+  }
+  /* Estilo alternativo para botões */
+  .botao {
+    -webkit-border-radius: 50px;
     -moz-border-radius: 50px;
     border-radius: 50px;
-    color: #000000; /* Cor do texto */
-    font-family: Arial; /* Define fonte padrão */
-    font-size: 20px; /* Define tamanho do texto */
-    font-weight: 100; /* Peso leve para a fonte */
-    align-items: center; /* Alinha itens verticalmente (pode ser redundante aqui) */
-    padding: 10px; /* Espaçamento interno */
-    background-color: #C6A1CB; /* Define cor de fundo */
-    border: solid #BD94BA 0; /* Sem borda visível */
-    text-decoration: none; /* Remove sublinhado */
-    display: inline-block; /* Itens em linha */
-    cursor: pointer; /* Cursor de mão */
-    text-align: center; /* Centraliza o conteúdo */
-    /* SUGESTÃO: Consolidar estilos similares com os botões para manter consistência. */
-}
-
-nav u li a {
-    text-decoration: none; /* Remove sublinhado */
-    color: rgb(149, 0, 255); /* Cor do texto */
-    font-size: 18px; /* Tamanho do texto */
-    padding: 0 15px; /* Espaçamento horizontal */
-}
-
+    color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 100;
+    align-items: center;
+    padding: 10px;
+    background-color: #C6A1CB;
+    border: solid #BD94BA 0;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+  }
+  .botao:hover {
+    color: #4f0083;
+    transform: scale(1.1);
+    font-size: 20px;
+  }
+  
 /* Estilo do formulário */
 .form-container {
     width: 60%; /* Largura do formulário */
