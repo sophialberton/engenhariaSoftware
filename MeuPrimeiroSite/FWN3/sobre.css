@@ -149,3 +149,29 @@
     font-size: 20px;
   }
   
+
+  /* Estilo genérico para seções */
+section {
+    padding: 20px; /* Espaçamento interno */
+    margin: 20px; /* Espaçamento externo */
+    background-color: white; /* Cor de fundo */
+    border-radius: 8px; /* Cantos arredondados */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  /* Estilo para blocos de exemplo */
+  .example {
+    padding: 10px; /* Espaçamento interno */
+    background-color: #e8f5e9; /* Cor de fundo suave */
+    border-left: 4px solid #4CAF50; /* Barra verde à esquerda */
+    margin-bottom: 20px; /* Espaçamento externo inferior */
+  }
+  /* Estilo para blocos de código */
+  .code {
+    background: #333; /* Fundo escuro */
+    color: #fff; /* Texto branco */
+    padding: 10px; /* Espaçamento interno */
+    font-family: monospace; /* Fonte monoespaçada */
+    overflow-x: auto; /* Rolagem horizontal se necessário */
+    border-radius: 5px; /* Cantos arredondados */
+  }
+  
