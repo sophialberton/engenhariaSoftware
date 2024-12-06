@@ -25,3 +25,20 @@ setInterval(() => {
   const nextIndex = (currentIndex + 1) % images.length;
   changeImage(nextIndex);
 }, 3000);
+
+function openLightbox(src) {
+  const lightbox = document.querySelector('.lightbox');
+  const lightboxImage = document.getElementById('lightbox-image');
+  lightboxImage.src = src;
+  lightbox.classList.remove('hidden');
+}
+
+function closeLightbox() {
+  const lightbox = document.querySelector('.lightbox');
+  lightbox.classList.add('hidden');
+}
+
+// Adiciona o evento de clique nas imagens para abrir a lightbox
+images.forEach(image => {
+  image.addEventListener('click', () => openLightbox(image.src));
+});
