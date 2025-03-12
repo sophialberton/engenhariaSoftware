@@ -16,7 +16,7 @@ int main(){
     numero1 = 50;
 	numero2 = 3;
 	
-	printf("\nO valor de numero1 e: %d", numero1);
+	printf("\nO valor de numero1 e: %d", numero1); //chamando valor declarado a variavel
 	printf("\nO endereco de numero1 e %p", &numero1); // O S comercial sigifica o ENDEREÇO ESPECIDICO da varivel
 	printf("\nO valor de PONT1 e: %d", *pont1); // o asteristico siginifica que esta chamando O PONTEIRO
 	printf("\nO endereco de PONT1 e %p", pont1 ); // Se eu colocasse o S comercial antes do pont1 ele chamaria o ENDEREÇO ESPECIFICO DO PONTEIRO.
