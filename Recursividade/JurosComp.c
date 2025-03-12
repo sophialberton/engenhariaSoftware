@@ -27,7 +27,6 @@ int main(void)
     printf("\nQual a capital incial (O valor investido no comeco?):");
     scanf("%f", &p);
     fflush(stdin);
-
     printf("\nAplicou durante meses ou anos?(m para meses e a para anos)");
     scanf("%c", &escolha);
     fflush(stdin);
