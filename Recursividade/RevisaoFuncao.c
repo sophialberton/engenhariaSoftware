@@ -35,9 +35,7 @@ void imprimir(int num[])
 
 int main()
 {
-
     int numeros[6];
-
     // nao importa o jeito q esses numeros foram coletados
     // primeiro vetor
     numeros[0] = 78;
