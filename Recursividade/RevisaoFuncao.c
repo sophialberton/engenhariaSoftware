@@ -31,6 +31,8 @@ void imprimir(int num[])
     printf("\n");
 }
 
+//Todas essas funções poderia ser colodas em outro arquvivo.c e adicionar no #incude "arquivoFuncoes.c"
+
 int main()
 {
 
