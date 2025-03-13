@@ -1,33 +1,52 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+/*Se uma função precisa retornar uma resposta ela tem retorn com a regra de coerencia,
+se nao precisa retornar nada ela começa com void e nao precisa de return */
+
+//*int[]* oq vai devolver
+//"ordenar" é o nome da função
+//"int numeros[]"" é o que a função precisa para trabalhar
+void ordenar(int n[])
+{
+    int i, j, temp;
+    for (i = 0; i < 6; i++)
+    {
+        for (j = i + 1; j < 6; j++)
+        {
+            if (n[i] > n[j])
+            {
+                temp = n[1];
+                n[i] = n[j];
+                n[j] = temp;
+            }
+        }
+    }
+}
+
+void imprimir(int num[])
+{
+    for (int i = 0; i < 6; i++)
+    printf("%d ", num[i]);
+    printf("\n");
+}
+
 int main()
 {
-    int numeros[11];
-    // nao imposta o jeito q esses numeros foram coletados
+
+    int numeros[6];
+
+    // nao importa o jeito q esses numeros foram coletados
+    // primeiro vetor
     numeros[0] = 78;
     numeros[1] = 2;
     numeros[2] = 45;
     numeros[3] = 98;
     numeros[4] = 1;
     numeros[5] = 56;
-
-    int i, j, temp;
-    for (i = 0; i < 6; i++)
-    {
-        for (j = i + 1; j < 6; j++)
-        {
-            if (numeros[i] > numeros[j])
-            {
-                temp = numeros[1];
-                numeros[i] = numeros[j];
-                numeros[j] = temp;
-            }
-        }
-    }
-
-    for (i = 0; i < 6; i++)
-        printf("\n%d", numeros[i]);
+    
+    ordenar(numeros);
+    imprimir(numeros);
 
     // 4 horas depois...
     numeros[0] = 5;
@@ -37,21 +56,8 @@ int main()
     numeros[4] = 9;
     numeros[5] = 63;
 
-    for (i = 0; i < 6; i++)
-    {
-        for (j = i + 1; j < 6; j++)
-        {
-            if (numeros[i] > numeros[j])
-            {
-                temp = numeros[1];
-                numeros[i] = numeros[j];
-                numeros[j] = temp;
-            }
-        }
-    }
-
-    for (i = 0; i < 6; i++)
-        printf("\n%d", numeros[i]);
+    ordenar(numeros);
+    imprimir(numeros);
 
     return 0;
 }
