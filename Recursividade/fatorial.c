@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+//for vai mais lento no processamento mas vai gastar menos memoria
 int main()
 {
     int numero, resultado, i;
