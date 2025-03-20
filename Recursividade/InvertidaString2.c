@@ -13,7 +13,7 @@ void inverter(char str[], int inicio, int fim)
 
 int main()
 {
-    char texto[100]
+    char texto[100];
 
     printf("\nDigite uma string: ");
     /*gets(texto);O problema com o uso de gets(texto) no seu código é que,
