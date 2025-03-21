@@ -56,3 +56,4 @@ C:\Faculdade\POO\Projetos\Cabum3\Cabum\obj\Debug\net9.0\refint\Cabum.dll
 C:\Faculdade\POO\Projetos\Cabum3\Cabum\obj\Debug\net9.0\Cabum.pdb
 C:\Faculdade\POO\Projetos\Cabum3\Cabum\obj\Debug\net9.0\Cabum.genruntimeconfig.cache
 C:\Faculdade\POO\Projetos\Cabum3\Cabum\obj\Debug\net9.0\ref\Cabum.dll
+C:\Faculdade\POO\Projetos\Cabum3\Cabum\obj\Debug\net9.0\Cabum.sourcelink.json
