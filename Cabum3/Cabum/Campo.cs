@@ -18,7 +18,7 @@ public class Campo
     //------------------------
     //**todo metodo ou operaçõespode fazer apenas uma coisa, uma tarefa por vez 
     //**metodo contrutor nao tem tipo,por nao ter tipo nao vai ter return
-    public Campo(int lar, int alt, int col, int lin)
+    public Campo(int lar, int alt, int col, int lin) //metodo consrutor nao pode ser privado, e sempre deve se chamar com o msm nome da classe.
     {
         this.linha=lin;
         this.largura=lar;

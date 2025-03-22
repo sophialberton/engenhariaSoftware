@@ -56,8 +56,6 @@ public class Jogador
         this.desenhar();
     }
 
-
-
     //MELHORIA !
     public bool podeReponderTecla(ConsoleKey tecla)
     {
