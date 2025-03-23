@@ -17,36 +17,41 @@ Então, ao final de 3 meses, o investimento terá R$ 1.157,63.*/
 #include <stdlib.h>
 #include <math.h>
 
+float calcular_juros_compostos(float p, float r, int t) {
+    // Caso base: se o tempo for zero, retorna o valor inicial
+    if (t == 0) {
+        return p;
+    }
+    // Recursão: aplica a fórmula para o próximo período de tempo
+    return calcular_juros_compostos(p * (1 + r), r, t - 1);
+}
+
 int main(void)
 {
     float p, r = 0.05, m;
-    int meses, ano; // tempo considere o meses para calcular
+    int meses, ano; // tempo considere os meses para calcular
     char escolha;
 
-    printf("\nQual a capital incial (O valor investido no comeco?):");
+    printf("\nQual a capital inicial (O valor investido no começo?): ");
     scanf("%f", &p);
-    fflush(stdin);
-    printf("\nAplicou durante meses ou anos?(m para meses e a para anos)");
+    getchar();  // Limpa o buffer de entrada
+    printf("\nAplicou durante meses ou anos? (M para meses e A para anos): ");
     scanf("%c", &escolha);
-    fflush(stdin);
+    getchar();  // Limpa o buffer de entrada
 
-    if (escolha == 'a' || 'A')
-    {
-        printf("\nInforme a quantidade de anos:");
+    if (escolha == 'a' || escolha == 'A') {
+        printf("\nInforme a quantidade de anos: ");
         scanf("%i", &ano);
-        fflush(stdin);
-        meses = ano * 12;
-    }
-    else if (escolha == 'm' || 'M')
-    {
-        printf("\nInforme a quantidade de meses:");
+        meses = ano * 12;  // Convertendo anos para meses
+    } else if (escolha == 'm' || escolha == 'M') {
+        printf("\nInforme a quantidade de meses: ");
         scanf("%i", &meses);
-        fflush(stdin);
     }
 
-    m = p * pow(1 + r, meses);
+    // Calcula o montante final com recursão
+    m = calcular_juros_compostos(p, r, meses);
 
-    printf("\nMontante Final R$%.2f ",m);
+    printf("\nMontante Final R$%.2f\n", m);
 
     return 0;
 }
