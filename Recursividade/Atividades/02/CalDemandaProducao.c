@@ -14,45 +14,44 @@ meses, ela deve continuar essa sequência.*/
 
 #include <stdio.h>
 #include <stdlib.h>
-#include <math.h>
 
 float calcular_demanda(float p, float r, int meses) {
     // Caso base: se não há mais meses para calcular, retorna o valor atual
     if (meses == 0) {
         return p;
     }
-    // Recursão: calcula a demanda do mês atual e chama a função para o próximo mês
-    return calcular_demanda(p * (1 + r), r, meses - 1);
+    // Recursão: soma 10% do valor do mês anterior
+    return calcular_demanda(p + (p * r), r, meses - 1);
 }
 
-int main(void)
-{
+int main(void) {
     float p, r = 0.10, m;
-    int meses, ano; // tempo considere o meses para calcular
+    int meses, ano;  // tempo para calcular em meses
     char escolha;
 
-    printf("\nQual a capital inicial (O valor investido no começo?): ");
+    printf("\nQual a demanda inicial (quantidade de produtos no primeiro mês): ");
     scanf("%f", &p);
-    fflush(stdin);
-    printf("\nAplicou durante meses ou anos?(m para meses e a para anos): ");
-    scanf("%c", &escolha);
-    fflush(stdin);
+    getchar();  // Limpa o buffer de entrada
 
+    printf("\nA demanda será calculada por meses ou anos? (m para meses, a para anos): ");
+    scanf("%c", &escolha);
+    getchar();  // Limpa o buffer de entrada
+
+    // Define o número de meses, dependendo da escolha de anos ou meses
     if (escolha == 'a' || escolha == 'A') {
         printf("\nInforme a quantidade de anos: ");
         scanf("%i", &ano);
-        fflush(stdin);
-        meses = ano * 12;
+        meses = ano * 12;  // Converte anos para meses
     } else if (escolha == 'm' || escolha == 'M') {
         printf("\nInforme a quantidade de meses: ");
         scanf("%i", &meses);
-        fflush(stdin);
     }
 
-    // Calcula a demanda final com recursão
+    // Calcula a demanda final após o número de meses usando recursão
     m = calcular_demanda(p, r, meses);
 
-    printf("\nMontante Final R$%.2f\n", m);
+    // Exibe o resultado
+    printf("\nDemanda final após %d mês(es): %.2f unidades\n", meses, m);
 
     return 0;
 }
