@@ -19,7 +19,6 @@ Então, ao final de 3 meses, o investimento terá R$ 1.157,63.*/
 
 int main(void)
 {
-
     float p, r = 0.05, m;
     int meses, ano; // tempo considere o meses para calcular
     char escolha;

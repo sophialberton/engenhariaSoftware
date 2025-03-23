@@ -23,5 +23,5 @@ int main()
     fgets(texto, sizeof(texto), stdin); // Usando fgets ao invés de gets
 
     inverter(texto, 0, strlen(texto) - 1);
-    printf("\nTexto invertido: %s\n", texto);
+    printf("\nTexto invertido: %s ", texto);
 }

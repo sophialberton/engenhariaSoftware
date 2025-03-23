@@ -7,6 +7,7 @@ int main()
 
     printf("Informe o numero: ");
     scanf("%d", &numero);
+    fflush(stdin);
 
     resultado = 1;
     for (i = 2; i <= numero; i++)

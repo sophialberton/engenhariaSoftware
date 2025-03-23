@@ -16,37 +16,43 @@ meses, ela deve continuar essa sequência.*/
 #include <stdlib.h>
 #include <math.h>
 
+float calcular_demanda(float p, float r, int meses) {
+    // Caso base: se não há mais meses para calcular, retorna o valor atual
+    if (meses == 0) {
+        return p;
+    }
+    // Recursão: calcula a demanda do mês atual e chama a função para o próximo mês
+    return calcular_demanda(p * (1 + r), r, meses - 1);
+}
+
 int main(void)
 {
-
-    float p, r = 0.05, m;
+    float p, r = 0.10, m;
     int meses, ano; // tempo considere o meses para calcular
     char escolha;
 
-    printf("\nQual a capital incial (O valor investido no comeco?):");
+    printf("\nQual a capital inicial (O valor investido no começo?): ");
     scanf("%f", &p);
     fflush(stdin);
-    printf("\nAplicou durante meses ou anos?(m para meses e a para anos)");
+    printf("\nAplicou durante meses ou anos?(m para meses e a para anos): ");
     scanf("%c", &escolha);
     fflush(stdin);
 
-    if (escolha == 'a' || 'A')
-    {
-        printf("\nInforme a quantidade de anos:");
+    if (escolha == 'a' || escolha == 'A') {
+        printf("\nInforme a quantidade de anos: ");
         scanf("%i", &ano);
         fflush(stdin);
         meses = ano * 12;
-    }
-    else if (escolha == 'm' || 'M')
-    {
-        printf("\nInforme a quantidade de meses:");
+    } else if (escolha == 'm' || escolha == 'M') {
+        printf("\nInforme a quantidade de meses: ");
         scanf("%i", &meses);
         fflush(stdin);
     }
 
-    m = p * pow(1 + r, meses);
+    // Calcula a demanda final com recursão
+    m = calcular_demanda(p, r, meses);
 
-    printf("\nMontante Final R$%.2f ",m);
+    printf("\nMontante Final R$%.2f\n", m);
 
     return 0;
 }
