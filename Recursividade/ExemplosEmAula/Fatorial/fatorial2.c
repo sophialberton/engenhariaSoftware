@@ -2,7 +2,7 @@
 //Questão de concurso Dev TSE 
 //Recursão
 //Função if usa mais memoria mas o processamento vai mais rapido
-int fatorial(int n) //n recebeu valor numero na main
+int fatorial(int n) //'n' recebeu valor numero na main
 {
     if (n == 0 || n == 1)
         return 1;
