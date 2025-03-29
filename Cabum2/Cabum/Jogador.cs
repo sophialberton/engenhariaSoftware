@@ -69,6 +69,7 @@ public class Jogador
         return podeMover;
     }
 
+    //Versao 1 para evitar colisões entre jogadores
     public string qualDirecao(ConsoleKey tecla)
     {
         string qual = "";
@@ -79,6 +80,19 @@ public class Jogador
         return qual;
     }
 
+    /*versao 2 para evitar colisoes entre jogadores
+    public int[] simularMovimento(ConsoleKey tecla)
+    {
+        int[] paraOndeVou = new int[2];
+
+        paraOndeVou[0] = this.x;
+        paraOndeVou[1] = this.y;
+        if (tecla == this.paraCima) paraOndeVou[1]--;
+        if (tecla == this.paraBaixo) paraOndeVou[1]++;
+        if (tecla == this.paraEsq) paraOndeVou[1]--;
+        if (tecla == this.paraDir) paraOndeVou[1]++;
+
+    }*/
 
 
 

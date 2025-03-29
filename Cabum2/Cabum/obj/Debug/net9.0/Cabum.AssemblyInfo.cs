@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Cabum")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+292ba5047651cfbedca87ace97031139042e63bc")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5292e2cbde8bfd4899df00a9326b22d0263d4ad")]
 [assembly: System.Reflection.AssemblyProductAttribute("Cabum")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Cabum")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

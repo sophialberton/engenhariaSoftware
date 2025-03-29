@@ -95,8 +95,5 @@ public class Campo
         }
             
         return pode;
-
-
     }
-
 }

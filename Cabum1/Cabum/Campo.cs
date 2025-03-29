@@ -67,14 +67,14 @@ public class Campo
         // jogador esta movendo para cima
         if (tecla == ConsoleKey.W || tecla == ConsoleKey.UpArrow)
         {
-            y--;
+            y--;//cima
             if(y == linha) pode = false;
         }    
         // verificar o limite inferior do campo
         // jogador esta movendo para baixo
         if (tecla == ConsoleKey.S || tecla == ConsoleKey.DownArrow)
         {
-            y++;
+            y++;//baixo
             if(y == linha+altura) pode = false;
         }
 
