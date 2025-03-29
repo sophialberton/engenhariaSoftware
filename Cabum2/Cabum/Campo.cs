@@ -20,13 +20,13 @@ public class Campo
     //**metodo contrutor nao tem tipo,por nao ter tipo nao vai ter return
     public Campo(int lar, int alt, int col, int lin)
     {
-        this.linha=lin;
-        this.largura=lar;
-        this.altura=alt;
-        this.coluna=col;
+        this.linha = lin;
+        this.largura = lar;
+        this.altura = alt;
+        this.coluna = col;
     }
     //!!!variaveis dentro de metodos sao totalmentes temporarioas, enquanto a das propriedades sao permanestes!!!
-    public void desenhar()    
+    public void desenhar()
     {
         int colIni, colFin, linIni, linFin;
         colIni = this.coluna;
@@ -34,7 +34,7 @@ public class Campo
         linIni = this.linha;
         linFin = this.linha + this.altura;
 
-        for(int x=colIni; x<=colFin; x++)
+        for (int x = colIni; x <= colFin; x++)
         {
             //linha superior
             Console.SetCursorPosition(x, linIni);
@@ -46,7 +46,7 @@ public class Campo
         }
 
         // desenhar linhas verticais
-        for (int y=linIni; y<=linFin; y++)
+        for (int y = linIni; y <= linFin; y++)
         {
             //linha superior
             Console.SetCursorPosition(colIni, y);
@@ -59,41 +59,53 @@ public class Campo
 
     }
 
-    public bool podeMover(int x, int y, ConsoleKey tecla)
+    //public bool podeMover(int x, int y, ConsoleKey tecla)
+    public bool podeMover(Coordenada paraOndeVou)
     {
         bool pode = true;
 
-        // verifica o limeite superior do campo
-        // jogador esta movendo para cima
-        if (tecla == ConsoleKey.W || tecla == ConsoleKey.UpArrow)
-        {
-            y--;
-            if(y == linha) pode = false;
-        }    
-        // verificar o limite inferior do campo
-        // jogador esta movendo para baixo
-        if (tecla == ConsoleKey.S || tecla == ConsoleKey.DownArrow)
-        {
-            y++;
-            if(y == linha+altura) pode = false;
-        }
+        // verifica o x para onde o jogador esta indo
+        if (paraOndeVou.x == coluna || paraOndeVou.x == coluna + largura)
+        
+            pode = false;
+        
+        // verifica o y para onde o jogador esta indo
+        if (paraOndeVou.y == linha || paraOndeVou.y == linha + largura)
+            pode = false;
+        
 
-        // verificar o limite esquerdo do campo
-        // jogador esta movendo para esquerda
-        if(tecla == ConsoleKey.A || tecla == ConsoleKey.LeftArrow)
-        {
-            x--;
-            if(x == coluna) pode = false;
-        }
+        /*    // verifica o limeite superior do campo
+            // jogador esta movendo para cima
+            if (tecla == ConsoleKey.W || tecla == ConsoleKey.UpArrow)
+            {
+                y--;
+                if(y == linha) pode = false;
+            }    
+            // verificar o limite inferior do campo
+            // jogador esta movendo para baixo
+            if (tecla == ConsoleKey.S || tecla == ConsoleKey.DownArrow)
+            {
+                y++;
+                if(y == linha+altura) pode = false;
+            }
 
-        // verificar o limite direita do campo
-        // jogador esta movendo para direita
-        if(tecla == ConsoleKey.D || tecla == ConsoleKey.RightArrow)
-        {
-            x++;
-            if(x == coluna+largura) pode = false;
-        }
-            
-        return pode;
+            // verificar o limite esquerdo do campo
+            // jogador esta movendo para esquerda
+            if(tecla == ConsoleKey.A || tecla == ConsoleKey.LeftArrow)
+            {
+                x--;
+                if(x == coluna) pode = false;
+            }
+
+            // verificar o limite direita do campo
+            // jogador esta movendo para direita
+            if(tecla == ConsoleKey.D || tecla == ConsoleKey.RightArrow)
+            {
+                x++;
+                if(x == coluna+largura) pode = false;
+            }*/
+
+        return pode;
     }
+
 }
