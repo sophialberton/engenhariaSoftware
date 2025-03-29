@@ -74,7 +74,7 @@ public class Campo
             pode = false;
         
 
-        /*    // verifica o limeite superior do campo
+        /*verifica o limeite superior do campo
             // jogador esta movendo para cima
             if (tecla == ConsoleKey.W || tecla == ConsoleKey.UpArrow)
             {
