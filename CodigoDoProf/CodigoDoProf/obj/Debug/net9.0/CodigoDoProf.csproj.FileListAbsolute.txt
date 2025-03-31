@@ -1,0 +1,15 @@
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\CodigoDoProf.GeneratedMSBuildEditorConfig.editorconfig
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\CodigoDoProf.AssemblyInfoInputs.cache
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\CodigoDoProf.AssemblyInfo.cs
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\CodigoDoProf.csproj.CoreCompileInputs.cache
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\CodigoDoProf.sourcelink.json
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\bin\Debug\net9.0\CodigoDoProf.exe
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\bin\Debug\net9.0\CodigoDoProf.deps.json
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\bin\Debug\net9.0\CodigoDoProf.runtimeconfig.json
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\bin\Debug\net9.0\CodigoDoProf.dll
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\bin\Debug\net9.0\CodigoDoProf.pdb
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\CodigoDoProf.dll
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\refint\CodigoDoProf.dll
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\CodigoDoProf.pdb
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\CodigoDoProf.genruntimeconfig.cache
+C:\Faculdade\POO\Projetos\CodigoDoProf\CodigoDoProf\obj\Debug\net9.0\ref\CodigoDoProf.dll
