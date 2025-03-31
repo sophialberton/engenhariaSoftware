@@ -39,17 +39,13 @@ public class Jogador
         Console.SetCursorPosition(this.x, this.y);
         Console.Write(" ");
     }
-
     /*public void definirTeclas(ConsoleKey cma, ConsoleKey bxa, ConsoleKey esq, ConsoleKey dir)
-
    {
        this.paraCima = cma;
        this.paraBaixo = bxa;
        this.paraEsq = esq;
        this.paraDir = dir;
    }*/
-
-  
     public void mover(ConsoleKey tecla)
     {
         this.apagar();
@@ -59,6 +55,8 @@ public class Jogador
         if (tecla == this.paraDir) this.x++;
         this.desenhar();
     }
+
+
 
     //MELHORIA !
     public bool podeReponderTecla(ConsoleKey tecla)
@@ -71,7 +69,6 @@ public class Jogador
         return podeMover;
     }
 
-    /*Versao 1 para evitar colisões entre jogadores
     public string qualDirecao(ConsoleKey tecla)
     {
         string qual = "";
@@ -80,20 +77,6 @@ public class Jogador
         if (tecla == this.paraEsq) qual = "e";
         if (tecla == this.paraDir) qual = "d";
         return qual;
-    }*/
-
-    //versao 2 para evitar colisoes entre jogadores (apenas mudanando nome do metoo e variavel)
-    public Coordenada simularMovimento(ConsoleKey tecla)
-    {
-        Coordenada coord = new Coordenada();
-        coord.x = this.x;
-        coord.y = this.y;
-        if (tecla == this.paraCima) coord.y--;
-        if (tecla == this.paraBaixo) coord.y++;
-        if (tecla == this.paraEsq) coord.x--;
-        if (tecla == this.paraDir) coord.x++;
-
-        return coord;
     }
 
 
