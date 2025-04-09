@@ -9,12 +9,12 @@ struct Aluno
     int idade;      // Campo para armazenar a idade do aluno (número inteiro)
 };
 
-/* Exemplo 2: Declaração de uma struct anônima com typedef, criando o tipo "Aluno" */
+/* Exemplo 2: Declaração de uma struct anônima com typedef, criando o tipo "Aluno" 
 typedef struct {
     int matricula;  // Campo para matrícula (inteiro)
     int nome[30];   // Campo para nome (AQUI TEM UM ERRO: deveria ser char nome[30], não int)
     int idade;      // Campo para idade (inteiro)
-} Aluno;           // Define o nome do tipo como "Aluno"
+} Aluno;           // Define o nome do tipo como "Aluno"*/
 
 int main()
 {
