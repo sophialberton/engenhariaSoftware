@@ -24,8 +24,9 @@ main()
         cout << "4 - Esvaziar lisa" << endl;
         cout << "0 - Sair" << endl;
         cout << "Opcao: " << endl;
-
-        // sai do programa
+        cin >> opcao;
+        // se quiser escolher qual elemento quer apagar, deixa de ser uma estrutra fifo/fila.
+        //  sai do programa
         if (opcao == 0)
         {
             break;
@@ -73,8 +74,7 @@ main()
     if (opcao == 2)
     {
 
-        cout << endl
-             << "Lista atual" << endl;
+        cout << endl << "Lista atual" << endl;
         ELEMENTO *atual;
         atual = inicio;
         while (atual != NULL)
@@ -104,4 +104,19 @@ main()
         }
         system("pause");
     }
+
+    if (opcao == 4)
+    {
+        ELEMENTO *atual;
+        atual = inicio;
+        while (inicio != NULL)
+        {
+            atual = inicio;
+            inicio = inicio->proximo;
+            delete atual;
+        }
+        cout << endl
+             << "Lista esvaziada" << endl;
+    }
 }
+
