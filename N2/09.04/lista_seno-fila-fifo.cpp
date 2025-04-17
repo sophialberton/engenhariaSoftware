@@ -62,7 +62,7 @@ main()
             else
             {
                 // Descobre o endereço do ultimo ELEMENTO
-                //adiciona o elemento ao final da fila/lista
+                // adiciona o elemento ao final da fila/lista
                 fim->proximo = novo;
                 fim = novo;
             }
@@ -98,6 +98,8 @@ main()
                 *atual = *inicio;
                 inicio = inicio->proximo;
                 delete atual;
+                if (inicio == NULL)
+                    fim = NULL;
                 cout << endl
                      << "Elemento apagado" << endl;
             }
@@ -125,7 +127,8 @@ main()
             cin >> valor;
 
             bool apagou = false;
-            ELEMENTO *atual; ELEMENTO *anterior;
+            ELEMENTO *atual;
+            ELEMENTO *anterior;
             atual = inicio;
             while (atual != NULL)
             {
@@ -136,6 +139,12 @@ main()
                     if (atual == inicio)
                     {
                         inicio = atual->proximo;
+                    }
+                    // o ultimo deve ser apagado
+                    else if (atual == fim)
+                    {
+                        anterior->proximo = NULL;
+                        fim = anterior;
                     }
                     // qualquer outro deve ser apagado
                     else
