@@ -56,18 +56,15 @@ main()
             {
                 // o novo ELEMENTO torna-se o INICIO da lista
                 inicio = novo;
+                fim = novo;
             }
             // lista ja possui algum elemento
             else
             {
                 // Descobre o endereço do ultimo ELEMENTO
-                ELEMENTO *atual;
-                atual = inicio;
-                while (atual->proximo != NULL)
-                {
-                    atual = atual->proximo;
-                }
-                atual->proximo = novo;
+                //adiciona o elemento ao final da fila/lista
+                fim->proximo = novo;
+                fim = novo;
             }
         }
 
