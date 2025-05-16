@@ -1,4 +1,4 @@
-public class Tela
+    public class Tela
 {
     private int largura;
     private int altura;
@@ -14,6 +14,13 @@ public class Tela
         this.corTexto = texto;
     }
 
+    public Tela()
+    {
+        this.largura = 70;
+        this.altura = 20;
+        this.corFundo = ConsoleColor.DarkBlue;
+        this.corTexto = ConsoleColor.Green;
+    }
 
     public void prepararTela(string titulo = "")
     {
@@ -22,6 +29,7 @@ public class Tela
         Console.Clear();
         this.desenharMoldura(0, 0, this.largura, this.altura);
         this.desenharMoldura(0, 0, this.largura, 2);
+        this.desenharMoldura(0, this.altura-2, this.largura, this.altura); //rodape
         this.centralizar(titulo, 1, 0, this.largura);
     }
 
@@ -97,4 +105,6 @@ public class Tela
         // retorna a opção escolhida
         return opcaoEscolhida;
     }
+
+    
 }

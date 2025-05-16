@@ -10,17 +10,20 @@ opcoes.Add("3 - Registrar Aluguel"); //adicionou a opção 3
 opcoes.Add("4 - Registrar Devolução"); //adicionou a opção 4
 opcoes.Add("0 - Sair"); //adicionou a opção 0
 
-Tela tela = new Tela(80, 25, ConsoleColor.Black, ConsoleColor.Magenta); //com base na classe Tela, criou uma nova tela com 80 colunas/25 linhas/cor de fundo preto/cor de texto roxo
+//Tela tela = new Tela(80, 25, ConsoleColor.Black, ConsoleColor.Magenta); //com base na classe Tela, criou uma nova tela com 80 colunas/25 linhas/cor de fundo preto/cor de texto roxo
+Tela tela = new Tela(); //pegando o metodo padrao ja denominado na classe tela
+ClienteCRUD clienteCRUD = new ClienteCRUD();
 string opcao;
+
 
 while (true)
 {
     tela.prepararTela("Fiesta!!!");
-    opcao = tela.mostrarMenu(opcoes, 1, 2);
+    opcao = tela.mostrarMenu(opcoes, 5, 2);
     switch (opcao)
     {
         case "1":
-            Console.WriteLine("Manter Clientes");
+            clienteCRUD.executarCRUD();
             break;
         case "2":
             Console.WriteLine("Manter Temas");
