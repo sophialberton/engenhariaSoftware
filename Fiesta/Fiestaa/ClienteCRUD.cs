@@ -7,18 +7,19 @@ public class ClienteCRUD
 
     public ClienteCRUD()
     {
-        this.listaClientes = new List<ClienteDTO>();
-        this.cliente = new ClienteDTO();
-        this.cliente = new ClienteDTO(1, "ze", "ze@gmail.com", "999999999");
+        this.listaClientes = new List<ClienteDTO>(); // "Banco de dados"
+        this.cliente = new ClienteDTO();   // Cliente "da vez""
+        //this.cliente = new ClienteDTO(1, "ze", "ze@gmail.com", "999999999");
         this.tela = new Tela();
     }
 
     public void executarCRUD()
-    {        
+    {
         // 1 - montar a tela do CRUD
-        this.montarTelaCliente();
-        Console.ReadKey();
+        this.montarTelaCliente(31,2);
 
+        //preparar m registro de cliente
+        this.cliente = new Cliente();
 
         /*
             Uma lógica possivel para o CRUD console .NET
@@ -51,20 +52,29 @@ public class ClienteCRUD
 
     }
 
-    private void montarTelaCliente()
+    private void montarTelaCliente(int coluna, int linha)
     {
-        this.tela.desenharMoldura(30, 5, 60, 15);
-        this.tela.centralizar("Cadastro de Cliente",6, 20, 60);
 
+        int coluna2 = coluna+30;
 
-        Console.SetCursorPosition(31,7);
+        this.tela.desenharMoldura(coluna, linha, coluna2, linha + 6);
+
+        linha++;
+        this.tela.centralizar("Cadastro de Cliente", linha, coluna, coluna2);
+        linha++;
+
+        coluna++;
+        Console.SetCursorPosition(coluna, linha);
         Console.Write("Código  :");
-        Console.SetCursorPosition(31,8);
+        linha++;
+        Console.SetCursorPosition(coluna, linha);
         Console.Write("Nome    :");
-        Console.SetCursorPosition(31,9);
+        linha++;
+        Console.SetCursorPosition(coluna, linha);
         Console.Write("Email   :");
-        Console.SetCursorPosition(31,10);
+        linha++;
+        Console.SetCursorPosition(coluna, linha);
         Console.Write("Telefone:");
-        
+
     }
 }

@@ -1,4 +1,4 @@
-    public class Tela
+public class Tela
 {
     private int largura;
     private int altura;
@@ -18,8 +18,8 @@
     {
         this.largura = 70;
         this.altura = 20;
-        this.corFundo = ConsoleColor.DarkBlue;
-        this.corTexto = ConsoleColor.Green;
+        this.corFundo = ConsoleColor.DarkMagenta;
+        this.corTexto = ConsoleColor.Red;
     }
 
     public void prepararTela(string titulo = "")
@@ -29,13 +29,26 @@
         Console.Clear();
         this.desenharMoldura(0, 0, this.largura, this.altura);
         this.desenharMoldura(0, 0, this.largura, 2);
-        this.desenharMoldura(0, this.altura-2, this.largura, this.altura); //rodape
+        this.desenharMoldura(0, this.altura - 2, this.largura, this.altura); //rodape
         this.centralizar(titulo, 1, 0, this.largura);
     }
 
-
+    public void limparArea(int ci, int li, int cf, int lf)
+    {
+        for (int x=  ci; x <= cf; x++)
+        {
+            for (int y = li; y <= lf; y++)
+            {
+                Console.SetCursorPosition(x, y);
+                Console.Write(" ");
+            }
+        }
+    }
     public void desenharMoldura(int colIni, int linIni, int colFin, int linFin)
     {
+        //limpar area da moldura
+        this.limparArea(colIni, linIni, colFin, linFin);
+
         // linhas horizontais
         for (int x = colIni; x <= colFin; x++)
         {
@@ -106,5 +119,5 @@
         return opcaoEscolhida;
     }
 
-    
+
 }
