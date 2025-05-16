@@ -35,7 +35,7 @@ public class Tela
 
     public void limparArea(int ci, int li, int cf, int lf)
     {
-        for (int x=  ci; x <= cf; x++)
+        for (int x = ci; x <= cf; x++)
         {
             for (int y = li; y <= lf; y++)
             {
@@ -99,6 +99,8 @@ public class Tela
         int colFin = colIni + largura + 1;
         int linFin = linIni + opcoes.Count + 2;
         this.desenharMoldura(colIni, linIni, colFin, linFin);
+
+        this.centralizar("Menu", 2, colIni, colFin);
 
         // mostra as opções do menu
         colIni++;
