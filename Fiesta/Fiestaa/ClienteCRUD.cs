@@ -4,6 +4,7 @@ public class ClienteCRUD
     private List<ClienteDTO> listaClientes;
     private ClienteDTO cliente;
     private Tela tela;
+    private int linCodigo, colCodigo;
 
     public ClienteCRUD()
     {
@@ -20,6 +21,10 @@ public class ClienteCRUD
 
         //preparar m registro de cliente
         this.cliente = new ClienteDTO();
+
+        // 2 - perguntar ao usuario a chave do cliente
+        this.entrarDados(1);
+        this.entrarDados(2);
 
         /*
             Uma lógica possivel para o CRUD console .NET
@@ -48,9 +53,32 @@ public class ClienteCRUD
                     5.4.2 - se o usuario confirmou exclusao
                         5.4.2.1 - excluir cliente
         */
-
-
     }
+
+    private void entrarDados(int qual)
+    {
+        //entrada de código (chave primária / identificador único)
+        if (qual==1)
+        {
+            Console.SetCursorPosition(colCodigo, linCodigo);
+            this.cliente.Codigo =  int.Parse(Console.ReadLine());
+        }
+
+        // entrada de dados do registro
+        if (qual==2)
+        {
+            Console.SetCursorPosition(colCodigo, linCodigo+1);
+            this.cliente.Nome = Console.ReadLine();
+
+            Console.SetCursorPosition(colCodigo, linCodigo+2);
+            this.cliente.Email = Console.ReadLine();
+
+            Console.SetCursorPosition(colCodigo, linCodigo+3);
+            this.cliente.Telefone = Console.ReadLine();
+
+        }
+    }
+
 
     private void montarTelaCliente(int coluna, int linha)
     {
@@ -67,10 +95,14 @@ public class ClienteCRUD
 
         coluna++;
         linha++;
+
+        this.colCodigo = coluna + cadCliente[0].Length;
+        this.linCodigo = linha;
+        
         for (int i = 0; i < cadCliente.Count; i++)
         {
             Console.SetCursorPosition(coluna, linha);
-            Console.Write(cadCliente[1]);
+            Console.Write(cadCliente[i]);
             linha++;
         }
 
@@ -96,4 +128,6 @@ public class ClienteCRUD
         Console.SetCursorPosition(coluna, linha);
         Console.Write("Telefone:");
     }*/
+
+
 }

@@ -42,6 +42,6 @@ while (true)
             break;
     }
 
-    Console.WriteLine("Pressione qualquer tecla para continuar...");
+    tela.centralizar("Pressione qualquer tecla para continuar...",24,0,30);
     Console.ReadKey();
 }
