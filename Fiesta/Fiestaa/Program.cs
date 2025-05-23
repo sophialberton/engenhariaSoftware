@@ -42,6 +42,6 @@ while (true)
             break;
     }
 
-    tela.centralizar("Pressione qualquer tecla para continuar...",24,0,30);
+    tela.centralizar("Pressione qualquer tecla para continuar...",24,0,80);
     Console.ReadKey();
 }

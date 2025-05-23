@@ -5,6 +5,8 @@ public class ClienteCRUD
     private ClienteDTO cliente;
     private Tela tela;
     private int linCodigo, colCodigo;
+    private int posicao;
+
 
     public ClienteCRUD()
     {
@@ -24,7 +26,44 @@ public class ClienteCRUD
 
         // 2 - perguntar ao usuario a chave do cliente
         this.entrarDados(1);
-        this.entrarDados(2);
+
+        // 3 - Procurar pela chave no "banco de dados" (listaClientes)
+        bool achou = this.buscarCodigo();
+
+        // 4 - Se nao achou a chave o banco de dados
+        if (!achou)
+        {
+            //4.1 - informar que nao achou 
+            this.tela.centralizar("Cliente nao encontrado. Deseja Cadastrar?(s/n):", 24, 0, 80);
+
+            // 4.2 - perguntar se deseja cadastrar
+            string resp = Console.ReadLine();
+
+            //4.3 - se o usuario informar que deseja cadastrar
+            if (resp.ToLower() == "s")
+            {
+                //4.3.1 - perguntar os dados restantes ao usuario
+                this.entrarDados(2);
+
+                //4.3.2 - perguntar se o usuario confirma o cadastro
+                this.tela.centralizar("Confirma cadastro?(s/n): ",24,0,80);
+                resp = Console.ReadLine();
+
+                // 4.3.3 - se o usuario confirmar
+                if (resp.ToLower() == "s")
+                {
+                    //4.3.3.1 - informar a inclusão do novo cliente
+                    this.listaClientes.Add(this.cliente);
+
+                }
+            }
+        }
+
+        // 5 - Se achou a chae no banco de dados
+        else
+        {
+            // codigos 5.1 em diante
+        }
 
         /*
             Uma lógica possivel para o CRUD console .NET
@@ -55,25 +94,45 @@ public class ClienteCRUD
         */
     }
 
+    private bool buscarCodigo()
+    {
+        bool encontrei = false;
+        for (int i = 0; i < this.listaClientes.Count; i++)
+        {
+            if (this.listaClientes[i].Codigo == this.cliente.Codigo)
+            {
+                encontrei = true;
+                this.posicao = i;
+                break;
+            }
+        }
+        return encontrei;
+    }
+
+
+
+
+
+
     private void entrarDados(int qual)
     {
         //entrada de código (chave primária / identificador único)
-        if (qual==1)
+        if (qual == 1)
         {
             Console.SetCursorPosition(colCodigo, linCodigo);
-            this.cliente.Codigo =  int.Parse(Console.ReadLine());
+            this.cliente.Codigo = int.Parse(Console.ReadLine());
         }
 
         // entrada de dados do registro
-        if (qual==2)
+        if (qual == 2)
         {
-            Console.SetCursorPosition(colCodigo, linCodigo+1);
+            Console.SetCursorPosition(colCodigo, linCodigo + 1);
             this.cliente.Nome = Console.ReadLine();
 
-            Console.SetCursorPosition(colCodigo, linCodigo+2);
+            Console.SetCursorPosition(colCodigo, linCodigo + 2);
             this.cliente.Email = Console.ReadLine();
 
-            Console.SetCursorPosition(colCodigo, linCodigo+3);
+            Console.SetCursorPosition(colCodigo, linCodigo + 3);
             this.cliente.Telefone = Console.ReadLine();
 
         }
@@ -98,7 +157,7 @@ public class ClienteCRUD
 
         this.colCodigo = coluna + cadCliente[0].Length;
         this.linCodigo = linha;
-        
+
         for (int i = 0; i < cadCliente.Count; i++)
         {
             Console.SetCursorPosition(coluna, linha);
