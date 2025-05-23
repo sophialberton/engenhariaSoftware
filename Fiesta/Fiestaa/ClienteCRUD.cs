@@ -46,7 +46,7 @@ public class ClienteCRUD
                 this.entrarDados(2);
 
                 //4.3.2 - perguntar se o usuario confirma o cadastro
-                this.tela.centralizar("Confirma cadastro?(s/n): ",24,0,80);
+                this.tela.centralizar("Confirma cadastro?(s/n): ", 24, 0, 80);
                 resp = Console.ReadLine();
 
                 // 4.3.3 - se o usuario confirmar
@@ -64,7 +64,16 @@ public class ClienteCRUD
         {
             // codigos 5.1 em diante
         }
-
+        // 5.2 - perguntar ao usuario se deseja  voltar, alterar ou excluir
+        //5.3 - se o usuario informou que deseja alterar
+        //5.3.1 - pergunta os novos dados ao usuario
+        //5.3.2 - pergunta se o usuario confirma a alteração
+        //5.3.3 - se o usuario confirmou a alteração
+        //5.3.3.1 - gravar a alteração que dos dados do cliente
+        //5.4 - se o usuario informou que deseja excluir
+        //5.4.1 - pergunta se o usuario confirma a exlcusao
+        //5.4.2 - se o usuario confirmou exclusao
+        //5.4.2.1 - excluir cliente
         /*
             Uma lógica possivel para o CRUD console .NET
             -------------------------------
