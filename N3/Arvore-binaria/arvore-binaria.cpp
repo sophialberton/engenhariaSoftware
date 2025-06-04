@@ -47,9 +47,14 @@ main()
             cout << "Cadastrar funcionalidade ainda nao implementada.\n";
             cout << "Digite um numero para cadastrar: ";
             cin >> num;
-            
+
+            // Aqui você deve implementar a lógica de inserção na árvore binária.
             ELEMENTO *novo = new ELEMENTO;
             novo->numero = num;
+            novo->esq = NULL;
+            novo->dir = NULL;
+
+            raiz = IncluirElemento(novo);
         }
         else if (opcao == 2)
         {
