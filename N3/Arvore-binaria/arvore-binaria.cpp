@@ -34,11 +34,6 @@ main()
         cout << "Escolha uma opcao: ";
         cin >> opcao;
 
-        if (opcao < 0 || opcao > 6)
-        {
-            cout << "Opcao invalida. Tente novamente.\n";
-            continue;
-        }
         if (opcao == 0)
         {
             cout << "Saindo do programa.\n";
@@ -67,6 +62,11 @@ main()
         else if (opcao == 6)
         {
             cout << "Listar Pos-ordem funcionalidade ainda nao implementada.\n";
+        }
+        else
+        {
+            cout << "Opcao invalida. Tente novamente.\n";
+            continue;
         }
     }
 }
