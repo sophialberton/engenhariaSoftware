@@ -6,7 +6,7 @@ struct ELEMENTO
     int numero;
     ELEMENTO *dir;
     ELEMENTO *esq;
-}
+};
 
 main()
 {
