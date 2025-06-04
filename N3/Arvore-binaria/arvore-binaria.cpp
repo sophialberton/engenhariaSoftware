@@ -10,6 +10,9 @@ struct ELEMENTO
 
 main()
 {
+    int num;
+    int opcao;
+    ELEMENTO *raiz = NULL;
     while (true)
     {
         /*Menu
@@ -21,9 +24,9 @@ main()
         6 - Listar Pos-ordem
         0 - Sair
         */
-        
-        int opcao;
-        cout << "Menu:\n";
+
+        system("cls");
+        cout << "---=== Arvore Binaria ===---:\n";
         cout << "1 - Cadastrar\n";
         cout << "2 - Consultar\n";
         cout << "3 - Apagar\n";
@@ -42,6 +45,11 @@ main()
         else if (opcao == 1)
         {
             cout << "Cadastrar funcionalidade ainda nao implementada.\n";
+            cout << "Digite um numero para cadastrar: ";
+            cin >> num;
+            
+            ELEMENTO *novo = new ELEMENTO;
+            novo->numero = num;
         }
         else if (opcao == 2)
         {
