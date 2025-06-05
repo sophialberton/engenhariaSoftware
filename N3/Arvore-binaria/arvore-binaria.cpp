@@ -8,6 +8,10 @@ struct ELEMENTO
     ELEMENTO *esq;
 };
 
+ELEMENTO *IncluirElemento(ELEMENTO *atual, ELEMENTO *novo); 
+/*ponto e virgula para avisar q o codigo da função está declarado,
+mas não implementado aqui, nesse caso esta la embaixo no final do código.*/
+
 main()
 {
     int num;
@@ -54,7 +58,7 @@ main()
             novo->esq = NULL;
             novo->dir = NULL;
 
-            raiz = IncluirElemento(novo);
+            raiz = IncluirElemento(raiz, novo);
         }
         else if (opcao == 2)
         {
@@ -82,4 +86,17 @@ main()
             continue;
         }
     }
+}
+
+/*
+Função para criar um novo elemento na árvore binária.
+*/
+ELEMENTO *IncluirElemento(ELEMENTO *atual, ELEMENTO *novo)
+{
+    if (atual == NULL) return novo;
+    if (novo->numero < atual->numero)
+        atual->esq = IncluirElemento(atual->esq, novo);
+    else
+        atual->dir = IncluirElemento(atual->dir, novo);
+    return atual;
 }
