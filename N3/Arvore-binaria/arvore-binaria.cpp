@@ -9,6 +9,7 @@ struct ELEMENTO
 };
 
 ELEMENTO *IncluirElemento(ELEMENTO *atual, ELEMENTO *novo); 
+void MostrarPreOrdem(ELEMENTO *atual);
 /*ponto e virgula para avisar q o codigo da função está declarado,
 mas não implementado aqui, nesse caso esta la embaixo no final do código.*/
 
@@ -70,7 +71,10 @@ main()
         }
         else if (opcao == 4)
         {
-            cout << "Listar Pre-ordem funcionalidade ainda nao implementada.\n";
+            cout << "--==Listagem de Pre-ordem.==--\n";
+            MostrarPreOrdem(raiz);
+            cout << "\n";
+            system("pause");
         }
         else if (opcao == 5)
         {
@@ -88,9 +92,7 @@ main()
     }
 }
 
-/*
-Função para criar um novo elemento na árvore binária.
-*/
+//Função para criar um novo elemento na árvore binária.
 ELEMENTO *IncluirElemento(ELEMENTO *atual, ELEMENTO *novo)
 {
     if (atual == NULL) return novo;
@@ -99,4 +101,15 @@ ELEMENTO *IncluirElemento(ELEMENTO *atual, ELEMENTO *novo)
     else
         atual->dir = IncluirElemento(atual->dir, novo);
     return atual;
+}
+
+//Função para mostrar Pre-ordem
+void MostrarPreOrdem(ELEMENTO *atual)
+{
+    if (atual != NULL)
+    {
+        cout << atual->numero << " ";
+        MostrarPreOrdem(atual->esq);
+        MostrarPreOrdem(atual->dir);
+    }
 }
