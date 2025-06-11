@@ -49,7 +49,6 @@ main()
         }
         else if (opcao == 1)
         {
-            cout << "Cadastrar funcionalidade ainda nao implementada.\n";
             cout << "Digite um numero para cadastrar: ";
             cin >> num;
 
@@ -108,7 +107,7 @@ void MostrarPreOrdem(ELEMENTO *atual)
 {
     if (atual != NULL)
     {
-        cout << atual->numero << " ";
+        cout << atual->numero << " - ";
         MostrarPreOrdem(atual->esq);
         MostrarPreOrdem(atual->dir);
     }
