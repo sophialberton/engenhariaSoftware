@@ -112,3 +112,74 @@ void MostrarPreOrdem(ELEMENTO *atual)
         MostrarPreOrdem(atual->dir);
     }
 }
+
+//Função para consultar Elemento
+ELEMENTO *ConsultarElemento(ELEMENTO *atual, int num)
+{
+    if (atual == NULL)
+        return NULL;
+    else if(atual->numero == num) return atual;
+    else if (num < atual->numero) return ConsultarElemento(atual->esq, num);
+    else return ConsultarElemento(atual->dir, num);
+    }
+
+// Função para excluir um elemento da árvore binária.
+ELEMENTO* ExcluirElemento(ELEMENTO *raiz, int num) {
+    ELEMENTO *atual = raiz;
+    ELEMENTO *anterior = NULL;
+
+    // 1. Buscar o nó a ser removido e manter o pai
+    while (atual != NULL && atual->numero != num) {
+        anterior = atual;
+        if (num < atual->numero)
+            atual = atual->esq;
+        else
+            atual = atual->dir;
+    }
+
+    if (atual == NULL)
+        return raiz; // Elemento não encontrado
+
+    // 2. Caso 1: Nó com 0 ou 1 filho
+    if (atual->esq == NULL || atual->dir == NULL) {
+        ELEMENTO *filho = (atual->esq != NULL) ? atual->esq : atual->dir;
+
+        if (anterior == NULL) {
+            // Removendo a raiz com 0 ou 1 filho
+            free(atual);
+            return filho;
+        }
+
+        if (anterior->esq == atual)
+            anterior->esq = filho;
+        else
+            anterior->dir = filho;
+
+        free(atual);
+    }
+    // 3. Caso 2: Nó com dois filhos
+    else {
+        // Encontrar o menor da subárvore direita (sucessor)
+        ELEMENTO *paiSucessor = atual;
+        ELEMENTO *sucessor = atual->dir;
+        while (sucessor->esq != NULL) {
+            paiSucessor = sucessor;
+            sucessor = sucessor->esq;
+        }
+
+        // Substituir o valor
+        atual->numero = sucessor->numero;
+
+        // Agora remover o sucessor (tem no máximo 1 filho à direita)
+        ELEMENTO *filhoSucessor = (sucessor->dir != NULL) ? sucessor->dir : NULL;
+
+        if (paiSucessor->esq == sucessor)
+            paiSucessor->esq = filhoSucessor;
+        else
+            paiSucessor->dir = filhoSucessor;
+
+        free(sucessor);
+    }
+
+    return raiz;
+}
