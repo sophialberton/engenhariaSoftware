@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Bug - JavaScript</title>
+</head>
+<body>
+    <h1>Demonstração de Teste com Bug</h1>
+    <script>
+        // Função errada: deveria somar, mas está subtraindo
+        function soma(a, b) {
+            return a - b; // BUG: deveria ser a + b
+        }
+
+        // Testes simulados no console
+        console.assert(soma(2, 3) === 5, "Erro: soma(2,3) deveria retornar 5");
+        console.assert(soma(-1, 1) === 0, "Erro: soma(-1,1) deveria retornar 0");
+
+        console.log("Se não houver erros acima, o código está correto!");
+    </script>
+</body>
+</html>
