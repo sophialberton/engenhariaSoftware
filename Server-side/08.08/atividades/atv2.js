@@ -9,63 +9,68 @@ Se sim, informe qual será a porcentagem. Em seguida, traduza o algoritmo para J
 e o execute utilizando NodeJS. Obs.: neste momento o acumulo de pontos não será implementado*
 */
 
-const porta = 2000;
-server.listen(porta);
-console.log(`O Servidor Web está em execução na porta ${porta} via Node.js`);
 
-// Função para calcular o desconto baseado no valor da compra
+const http = require('http');
+const url = require('url');
+
+// Função para calcular desconto
 function calcularDesconto(valorCompra) {
-  let pontos = Math.floor(valorCompra / 20);
-  // Limitar pontos a 100 no máximo
-  if (pontos > 100) pontos = 100;
-  // Ajustar para múltiplo de 10 (arredondar para baixo)
-  pontos = pontos - (pontos % 10);
-  if (pontos >= 10) {
-    return pontos / 2; // 50% do total de pontos
-  }
-  return 0;
+    let pontos = Math.floor(valorCompra / 20);
+    if (pontos > 100) pontos = 100;
+    pontos = pontos - (pontos % 10);
+    if (pontos >= 10) {
+        return pontos / 2;
+    }
+    return 0;
 }
 
-// Exemplo de uso
-const valorCompra = 250; // Valor total da compra
-const desconto = calcularDesconto(valorCompra);
-if (desconto > 0) {
-    console.log(`O cliente terá um desconto de ${desconto}% na próxima compra.`);
-}else {
-    console.log("O cliente não terá desconto na próxima compra.");
-}
-module.exports = calcularDesconto; // Exportando a função para testes ou uso em outros módulos
+const server = http.createServer(function(req, res) {
+    const reqUrl = url.parse(req.url, true); // true para pegar query params
 
-// Testando a função com diferentes valores de compra
-console.log(calcularDesconto(200));  // pontos=10 -> desconto 5%
-console.log(calcularDesconto(250));  // pontos=10 -> desconto 5%
-console.log(calcularDesconto(400));  // pontos=20 -> desconto 10%
-console.log(calcularDesconto(1000)); // pontos=50 -> desconto 25%
-console.log(calcularDesconto(19));   // pontos=0 -> desconto 0%
-console.log(calcularDesconto(300));  // pontos=15 -> arredonda p/10, desconto 5%
+    console.log(`Requisição de ${req.socket.remoteAddress} para ${reqUrl.pathname}`);
 
-var http = require('http');
+    if (reqUrl.pathname === '/') {
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        res.write('<html><body><meta charset="utf-8"><p>Esta é uma Página Web!<script>console.log("NO BROWSER")</script></p></body></html>');
+        res.end();
+    }
+    else if (reqUrl.pathname === '/estudantes') {
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        res.write('<html><body><p>Esta é a Página do Estudante!</p></body></html>');
+        res.end();
+    }
+    else if (reqUrl.pathname === '/admin') {
+        res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'});
+        res.write('<html><body><p>Esta é a Página do Administrador!</p></body></html>');
+        res.end();
+    }
+    else if (reqUrl.pathname === '/desconto') {
+        const valor = parseFloat(reqUrl.query.valor);
 
-var server = http.createServer(function(req, res ){
-  if (req.url == '/'){
-    res.writeHead(200, {'Content-Type': 'text/html; charset=utf-8'})
+        if (isNaN(valor) || valor < 0) {
+            res.writeHead(400, {'Content-Type': 'text/plain; charset=utf-8'});
+            res.end('Parâmetro "valor" inválido ou ausente.');
+            console.log('Parâmetro "valor" inválido ou ausente.');
+        } else {
+            const desconto = calcularDesconto(valor);
+            res.writeHead(200, {'Content-Type': 'text/plain; charset=utf-8'});
 
-    res.write('<html><body><meta charset="utf-8"> <p>Esta é uma Página Web!<script>console.log("NO BROWSER") </script></p></body></html>');
-    console.log("Está No Servidor");
-    res.end();
-  }
-  else if (req.url == "/estudantes") {
-    res.writeHead(200, {'Content-Type': 'text/html charset=utf-8'})
-    res.write('<html><body><p> Esta é a Página do Estudante!</p></body></html');
-    res.end();
-  }
+            if (desconto > 0) {
+                res.end(`O cliente terá um desconto de ${desconto}% na próxima compra.`);
+            } else {
+                res.end('O cliente não terá desconto na próxima compra.');
+            }
 
-  else if (req.url == "/admin") {
-    res.writeHead(200, {'Content-Type': 'text/html charset=utf-8'})
-    res.write('<html><body><p> Esta é a Página do Administrador!</p></body></html>');
-    res.end();
-  }
-  else
-    res.end('Invalid Request ou Solicitação Inválida!'); 
+            console.log(`Valor da compra: R$${valor.toFixed(2)} - Desconto calculado: ${desconto}%`);
+        }
+    }
+    else {
+        res.writeHead(404, {'Content-Type': 'text/plain; charset=utf-8'});
+        res.end('Invalid Request ou Solicitação Inválida!');
+    }
+});
 
+const porta = 2000;
+server.listen(porta, () => {
+    console.log(`Servidor rodando na porta ${porta} via Node.js`);
 });
