@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste de Validação de E-mail</title>
+</head>
+<body>
+    <h1>Validação de E-mail - Teste com Bug</h1>
+    <script>
+        // Função errada: a regex não valida corretamente
+        function validarEmail(email) {
+            return /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]$/.test(email);
+            // BUG: Falta a parte ".com" na expressão regular
+        }
+
+        // Testes no console
+        console.assert(validarEmail("teste@email.com") === true, "Erro: 'teste@email.com' deveria ser válido");
+        console.assert(validarEmail("usuario@dominio") === false, "Erro: 'usuario@dominio' deveria ser inválido");
+        console.assert(validarEmail("invalido.com") === false, "Erro: 'invalido.com' deveria ser inválido");
+        console.assert(validarEmail("nome@email.co.uk") === true, "Erro: 'nome@email.co.uk' deveria ser válido");
+
+        console.log("Se não houver erros acima, a função está funcionando corretamente.");
+    </script>
+</body>
+</html>
