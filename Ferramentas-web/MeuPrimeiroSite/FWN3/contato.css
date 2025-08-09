@@ -1,0 +1,273 @@
+/* Remove margens e espaçamentos padrão, define o modelo de caixa e fontes padrão */
+* { 
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    border: 0px solid red; /* Apenas para melhor visualização durante o desenvolvimento */
+  }
+  
+  /* Define estilo para o cabeçalho e rodapé */
+  header, footer {
+    background-color: #E3D5CA; /* Cor de fundo */
+    color: rgb(33, 51, 68); /* Cor do texto */
+    width: 100%; /* Ocupa toda a largura */
+  }
+  /* Estilo para o rodapé */
+  footer {
+    bottom: 0; /* Posiciona no final */
+    text-align: center; /* Centraliza o texto */
+    font-size: 22px; /* Tamanho da fonte */
+    padding: 100px 0; /* Espaçamento interno no topo e embaixo */
+  }
+  /* Define layout do cabeçalho */
+  header {
+    display: flex; /* Layout flexível */
+    align-items: center; /* Alinha itens no centro verticalmente */
+    justify-content: space-around; /* Distribui itens com espaçamento uniforme */
+  }
+  /* Estilo para itens de lista dentro da navegação */
+  nav ul li {
+    list-style: none; /* Remove marcações da lista */
+    display: inline-block; /* Exibe como bloco inline */
+  }
+  /* Estilo para links dentro de navegação */
+  nav ul li a {
+    text-decoration: none; /* Remove sublinhado */
+    color: rgb(58, 0, 34); /* Cor do texto */
+    font-size: 18px; /* Tamanho da fonte */
+    padding: 0 15px; /* Espaçamento interno horizontal */
+    transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease; /* Transições suaves para a cor, transformação e o tamanho da fonte */
+  }
+  /* Efeito de hover para os links de navegação */
+  nav ul li a:hover {
+    color: #4f0083; /* Cor do texto quando o cursor passa */
+    transform: scale(1.1); /* Aumenta ligeiramente o tamanho do texto */
+    font-size: 20px; /* Aumenta o tamanho da fonte durante o hover */
+  }
+  /* Define espaçamento horizontal entre itens da lista de links */
+  .nav-links li {
+    padding: 0 20px;
+  }
+  /* Estilo para o logotipo */
+  .logo {
+    font-size: 4em; /* Tamanho grande para o texto do logotipo */
+    font-weight: bold; /* Deixa o texto em negrito */
+  
+  }
+  /* Estilo para elementos com a classe SophiaPicaskyAlberton */
+  .SophiaPicaskyAlberton {
+    font-size: 1.8em; /* Define um tamanho de fonte maior */
+    margin-left: 0; /* Alinha o texto à direita dentro de seu container */
+    margin-right: ; /* Certifica-se de que não há margem à direita */
+  }
+  /*Com ajuda do Chat gpt as divisórias do footer*/
+  .footer-div {
+    display: flex; /* Cria um layout em linha usando Flexbox */
+    justify-content: space-between; /* Distribui as divisórias com espaçamento entre elas */
+    align-items: center; /* Alinha verticalmente no centro */
+    height: 10vh; /* Altura da área do rodapé */
+    padding: 10px;
+    background-color: #E3D5CA;
+  }
+  .lado-direito,
+  .lado-meio,
+  .lado-esquerdo {
+    flex: 1; /* Garante que todas as divisórias tenham o mesmo tamanho */
+    padding: 50px;
+    box-sizing: border-box; /* Inclui o padding dentro da largura e altura */
+  }
+  .lado-direito {
+    text-align: right; /* Alinha o conteúdo do lado direito à direita */
+  }
+  .lado-meio {
+    text-align: center; /* Centraliza o conteúdo do meio */
+  }
+  .lado-esquerdo {
+    text-align: left; /* Alinha o conteúdo do lado esquerdo à esquerda */
+  }
+  /*para botoes de controle*/
+  .buttons button {
+    background-color: #f3f3f3; /* Cor de fundo padrão */
+    border: none; /* Remove bordas padrão */
+    border-radius: 20px; /* Bordas arredondadas */
+    padding: 10px 15px;
+    margin: 0 5px; /* Espaçamento entre os botões */
+    cursor: pointer; /* Indica que é clicável */
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transição suave */
+  }
+  .buttons button:hover {
+    background-color: #d3c5ff; /* Cor ao passar o mouse */
+    transform: scale(1.1); /* Aumenta ligeiramente */
+  }
+  .buttons button.active {
+    background-color: #4f0083; /* Cor de destaque para o botão ativo */
+    color: #fff; /* Cor do texto */
+    font-weight: bold; /* Texto em negrito */
+    transform: scale(1.2); /* Aumenta ligeiramente o botão ativo */
+  }
+  /* Estilo para os botões */
+  button {
+    -webkit-border-radius: 50px; /* Borda arredondada (compatibilidade WebKit) */
+    -moz-border-radius: 50px; /* Borda arredondada (compatibilidade Firefox antigo) */
+    border-radius: 50px; /* Borda arredondada */
+    color: #000000; /* Cor do texto */
+    font-family: Arial; /* Fonte do texto */
+    font-size: 20px; /* Tamanho da fonte */
+    font-weight: 100; /* Peso da fonte mais fino */
+    align-items: center; /* Alinha o conteúdo centralmente */
+    padding: 10px; /* Espaçamento interno */
+    background-color: #C6A1CB; /* Cor de fundo */
+    border: solid #BD94BA 0; /* Sem borda visível */
+    text-decoration: none; /* Remove sublinhado */
+    display: inline-block; /* Exibe como bloco inline */
+    cursor: pointer; /* Mostra o cursor de clique */
+    text-align: center; /* Centraliza o texto */
+  }
+  /* Estilo alternativo para botões */
+  .botao {
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    border-radius: 50px;
+    color: #000000;
+    font-family: Arial;
+    font-size: 20px;
+    font-weight: 100;
+    align-items: center;
+    padding: 10px;
+    background-color: #C6A1CB;
+    border: solid #BD94BA 0;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    transition: color 0.3s ease, transform 0.3s ease, font-size 0.3s ease;
+  }
+  .botao:hover {
+    color: #4f0083;
+    transform: scale(1.1);
+    font-size: 20px;
+  }
+  
+/* Estilo do formulário */
+.form-container {
+    width: 60%; /* Largura do formulário */
+    padding: 20px; /* Espaçamento interno */
+    background-color: white; /* Fundo branco */
+    border-radius: 10px; /* Cantos arredondados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.form-container h1 {
+    text-align: center; /* Centraliza o título */
+    margin-bottom: 20px; /* Espaçamento inferior */
+    color: #333; /* Cor do texto */
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    width: calc(100% - 20px); /* Largura total menos espaçamento */
+    padding: 10px; /* Espaçamento interno */
+    margin-top: 5px; /* Espaçamento superior */
+    margin-bottom: 15px; /* Espaçamento inferior */
+    border: 1px solid #ccc; /* Borda cinza */
+    border-radius: 5px; /* Bordas arredondadas */
+    outline: none; /* Remove contorno padrão */
+}
+
+label {
+    margin-top: 10px; /* Espaçamento superior */
+    display: block; /* Faz o rótulo ocupar toda a largura */
+    font-weight: bold; /* Negrito para destaque */
+}
+
+/* Continuação abaixo... */
+input:focus, textarea:focus {
+    border-color: #007bff; /* Muda a cor da borda quando o elemento está em foco */
+    outline: none; /* Remove a borda padrão que aparece ao focar */
+}
+
+/* Botão de envio */
+button {
+    padding: 10px; /* Espaçamento interno do botão */
+    background-color: #007bff; /* Cor de fundo do botão */
+    color: white; /* Cor do texto */
+    border: none; /* Remove a borda padrão */
+    border-radius: 5px; /* Deixa os cantos arredondados */
+    font-size: 16px; /* Define o tamanho da fonte */
+    cursor: pointer; /* Adiciona o cursor de "mãozinha" ao passar por cima */
+
+    
+    transition: backgroud-color 0.3s; /* Adiciona uma transição suave na mudança de cor */
+    /* Melhorar: Há um pequeno erro de digitação em 'backgroud-color'; o correto é 'background-color'. */
+}
+
+button:hover {
+    background-color: #0056b3; /* Altera a cor de fundo quando o botão é "hovered" */
+}
+
+/* Container geral para layout do formulário e da imagem */
+.container {
+    display: flex; /* Define layout flexível */
+    width: 90%; /* O container ocupa 90% da largura da página */
+    max-width: 10000px; /* Limita a largura máxima a 1000px */
+    border: 1px solid #ddd; /* Adiciona uma borda cinza clara */
+    border-radius: 10px; /* Cantos arredondados */
+    overflow: hidden; /* Impede que o conteúdo "vaze" */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adiciona uma sombra suave */
+    padding: 20px; /* Espaçamento interno */
+    margin: 0 auto; /* Centraliza horizontalmente */
+    margin: 20px auto; /* Adiciona um espaçamento de 50px acima e abaixo */
+    /* Melhorar: Centralizar poderia ser simplificado com margin apenas uma vez. */
+}
+
+.image-container {
+    flex: 1; /* Divide o espaço igualmente com o formulário */
+    background-color: #e0e0e0; /* Cor de fundo cinza claro */
+    display: flex; /* Para permitir o controle do conteúdo flexível */
+    justify-content: center; /* Alinha a imagem horizontalmente no centro */
+}
+
+.image-container img {
+    width: 100%; /* Imagem ocupa toda a largura */
+    height: 100%; /* Imagem ocupa toda a altura */
+    object-fit: cover; /* Ajusta a imagem para cobrir sem distorcer */
+}
+
+.form-container {
+    flex: 1; /* Divide o espaço igualmente com a imagem */
+    padding: 20px; /* Espaçamento interno */
+    background-color: #ffffff; /* Fundo branco */
+}
+
+form {
+    display: flex; /* Torna o formulário flexível */
+    flex-direction: column; /* Coloca os itens na vertical */
+    gap: 15px; /* Espaçamento entre os itens */
+}
+
+label {
+    font-weight: bold; /* Deixa o texto em negrito */
+    margin-bottom: 5px; /* Adiciona espaçamento abaixo do rótulo */
+}
+
+input, textarea, button {
+    padding: 10px; /* Espaçamento interno */
+    border: 1px solid #ccc; /* Borda cinza clara */
+    border-radius: 5px; /* Cantos arredondados */
+    font-size: 1rem; /* Define o tamanho da fonte */
+}
+
+/* Botão dentro do formulário */
+button {
+    background-color: #007bff; /* Cor azul */
+    color: white; /* Texto branco */
+    cursor: pointer; /* Mostra cursor pointer */
+    border: none; /* Remove a borda */
+    transition: background-color 0.3s; /* Adiciona uma transição suave */
+}
+
+button:hover {
+    background-color: #0056b3; /* Altera a cor no hover */
+}

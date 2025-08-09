@@ -1,0 +1,147 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    background-color: #1b1b2f;
+    color: #ececec;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #0f3460;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    padding: 0 20px;
+}
+
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    margin: 5px;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: url('https://via.placeholder.com/1500x800') no-repeat center center/cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #ececec;
+    position: relative;
+}
+
+.hero-content {
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.cta-button {
+    background-color: #e94560;
+    padding: 15px 30px;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #ff2e63;
+}
+
+/* Games Section */
+.games-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.games-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.game-card {
+    background-color: #162447;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+    width: 200px;
+}
+
+.game-card:hover {
+    transform: scale(1.1);
+}
+
+.game-info {
+    text-align: left;
+    margin-top: 10px;
+}
+
+/* Reviews Section */
+.reviews-section {
+    padding: 80px 20px;
+    text-align: center;
+    background-color: #0f3460;
+}
+
+.carousel {
+    display: flex;
+    overflow: hidden;
+    gap: 20px;
+}
+
+.review-card {
+    background-color: #162447;
+    padding: 20px;
+    min-width: 250px;
+    border-radius: 10px;
+    transition: transform 0.3s;
+}
+
+.review-card:hover {
+    transform: scale(1.05);
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+    .nav-links {
+        display: none;
+    }
+
+    .burger {
+        display: block;
+    }
+}

@@ -1,0 +1,138 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SophiaPicaskyAlberton</title>
+        <link rel="stylesheet" href="inicio.css">
+    </head>
+    <body id="topo">
+    <!--Cabeçalho -->   
+    <header>
+            <div class="logo">★</div>
+            <div class="SophiaPicaskyAlberton">Sophia Picasky Alberton</div>
+            
+            <nav>
+                <ul class="nav-links">
+                    <li class="botao"><a href="inicio.html">Inicio</a></li>
+                    <li class="botao"><a href="sobre.html">Sobre</a></li>
+                    <li class="botao"><a href="contato.html">Contato</a></li>
+                </ul>
+            </nav>
+    </header>
+    <!--Final do Cabeçalho-->
+    <!--Inicio do Texto introduório e slides/carrossel-->
+    <div class="container">
+        <!-- Lado esquerdo: Texto -->
+        <div class="left-side">
+            
+            <h1>LINHA DO TEMPO</h1>
+            <h3>Linha do tempo da minha vida! Começando pelas situações mais recente para mais antigas.
+                Contanto com detalhes cada fase que eu considero importante da minha vida, sou muito grata a todo conhecimento e espero estar sempre evoluindo!</h3>
+
+        </div>
+        <!-- Lado direito: Carrossel de imagens -->
+        <div class="right-side">
+            <div class="carousel">
+                <img src="Imagens/baixados.jpg" class="carousel-image active" alt="Imagem 1">
+                <img src="Imagens/CATOLICASC.jpg" class="carousel-image" alt="Imagem 2">
+                <img src="Imagens/Estrela PNG Sem Fundo Preta Negra.png" class="carousel-image" alt="Imagem 3">
+            </div>
+            <div class="lightbox hidden" onclick="closeLightbox()">
+                <img src="" alt="Imagem expandida" id="lightbox-image">
+            </div>
+            
+            <div class="buttons">
+                <button onclick="changeImage(0)">1</button>
+                <button onclick="changeImage(1)">2</button>
+                <button onclick="changeImage(2)">3</button>
+            </div>
+        </div>
+    </div>
+    <!--Final do Texto introduório e slides/carrossel-->
+    <!--Colocar conteudo Dentro da div -->
+    <div>
+            <img src="Imagens/LogoCatolicaTransparente.png"></div>
+        
+        
+        <!--APAGAR ABAIXO -->
+        <section>
+        <h2>Introduction to HTML</h2>
+        <p>HTML (HyperText Markup Language) is the standard markup language for creating web pages. It provides structure to a web page, using elements such as <code>&lt;h1&gt;</code>, <code>&lt;p&gt;</code>, and <code>&lt;div&gt;</code>.</p>
+        <div class="example">
+            <h3>HTML Example:</h3>
+            <div class="code">
+                &lt;h1&gt;Welcome to the Web!&lt;/h1&gt;<br>
+                &lt;p&gt;This is a paragraph element that explains content.&lt;/p&gt;
+            </div>
+        </div>
+        </section>
+        <section>
+        <h2>Introduction to CSS</h2>
+        <p>CSS (Cascading Style Sheets) is used to style and layout web pages. It allows you to add colors, fonts, and layouts to make your web pages visually appealing.</p>
+        <div class="example">
+            <h3>CSS Example:</h3>
+            <div class="code">
+                body {<br>
+                &nbsp;&nbsp;background-color: lightblue;<br>
+                &nbsp;&nbsp;color: navy;<br>
+                }<br>
+                h1 {<br>
+                &nbsp;&nbsp;font-size: 2.5em;<br>
+                &nbsp;&nbsp;text-align: center;<br>
+                }
+            </div>
+        </div>
+        </section>
+        <section>
+
+        <h2>Introduction to JavaScript</h2>
+        <p>JavaScript is a programming language that makes web pages interactive. You can create alerts, dynamic elements, or even modify the content of the page based on user actions.</p>
+        <div class="example">
+            <h3>JavaScript Example:</h3>
+            <div class="code">
+                &lt;button onclick="greetUser()"&gt;Click Me&lt;/button&gt;<br>
+            </div>
+        </div>
+        <button onclick="greetUser()">Try JavaScript</button>
+        </section>  
+        <!--APAGAR ACIMA-->
+
+
+    </div>
+        <section id="sobre">
+            <h2>Sobre</h2>
+            <p>Sobreeeeaaaaaa</p>
+        </section>
+
+
+
+        <footer>
+    
+            </div>
+            <div class="footer-div">
+                <div class="lado-esquerdo">
+                    <h3>Voce pode me encontrar em</h3>
+                    <p>@guaphia</p>
+                    <p>sophia.alberton@gmail.com</p>
+                    <p>Sophia Picasky Alberton</p>
+                    <p>+55 (47) 99177-9017</p>
+                </div>
+                <div class="lado-meio">
+                    <a href="#topo" class="botao">VOLTAR PARA CIMA E VER A FASE ATUAL</a>
+                </div>
+                <div class="lado-direito">
+                  <p>Conteúdo da direita</p>
+                </div>
+              </div>
+
+              <h6>& copy; All Right Reservad</h6>
+        </footer>
+
+
+        <script src="inicio.js"></script>
+
+
+        
+    </body>
+    </html>
