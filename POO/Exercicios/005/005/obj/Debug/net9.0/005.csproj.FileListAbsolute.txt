@@ -1,0 +1,15 @@
+C:\Faculdade\POO\Projetos\Exercicios\005\005\bin\Debug\net9.0\005.exe
+C:\Faculdade\POO\Projetos\Exercicios\005\005\bin\Debug\net9.0\005.deps.json
+C:\Faculdade\POO\Projetos\Exercicios\005\005\bin\Debug\net9.0\005.runtimeconfig.json
+C:\Faculdade\POO\Projetos\Exercicios\005\005\bin\Debug\net9.0\005.dll
+C:\Faculdade\POO\Projetos\Exercicios\005\005\bin\Debug\net9.0\005.pdb
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\005.GeneratedMSBuildEditorConfig.editorconfig
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\005.AssemblyInfoInputs.cache
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\005.AssemblyInfo.cs
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\005.csproj.CoreCompileInputs.cache
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\005.sourcelink.json
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\005.dll
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\refint\005.dll
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\005.pdb
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\005.genruntimeconfig.cache
+C:\Faculdade\POO\Projetos\Exercicios\005\005\obj\Debug\net9.0\ref\005.dll

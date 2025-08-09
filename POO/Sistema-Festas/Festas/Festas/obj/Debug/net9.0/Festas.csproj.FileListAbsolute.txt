@@ -1,0 +1,15 @@
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\Festas.GeneratedMSBuildEditorConfig.editorconfig
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\Festas.AssemblyInfoInputs.cache
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\Festas.AssemblyInfo.cs
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\Festas.csproj.CoreCompileInputs.cache
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\Festas.sourcelink.json
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\bin\Debug\net9.0\Festas.exe
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\bin\Debug\net9.0\Festas.deps.json
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\bin\Debug\net9.0\Festas.runtimeconfig.json
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\bin\Debug\net9.0\Festas.dll
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\bin\Debug\net9.0\Festas.pdb
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\Festas.dll
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\refint\Festas.dll
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\Festas.pdb
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\Festas.genruntimeconfig.cache
+C:\Faculdade\POO\Projetos\Sistema-Festas\Festas\Festas\obj\Debug\net9.0\ref\Festas.dll
