@@ -15,6 +15,10 @@ net start MariaDB
 "C:\Program Files\MariaDB 12.0\bin\mysqld.exe" --install "MariaDB" --datadir="C:\Program Files\MariaDB 12.0\data"
 net start MariaDB
 ```
+### limpar tela 
+```
+system cls;
+```
 
 ### Maria DB
 ```
