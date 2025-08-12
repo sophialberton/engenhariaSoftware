@@ -196,5 +196,22 @@ MariaDB [banco]> desc conta_corrente;
 
 MariaDB [banco]>
 ```
+### alterar para apgar campo de tabela
 
+- Apaganfo campo uf da tabela cidade
+```
+ alter table cidade drop uf
+ ```
 
+### alterar para inserir dados de campo na tabela
+- inserindo valores no campo da tabela estado
+```
+insert into estado (nm_estado, uf) values
+    -> ("Santa Catarina", "SC"),("Rio Grande do Sul", "r"),
+    -> ("Sao Paulo", "SP");
+```
+### Alterar para inserir um campo novo na tabea
+- alterando tabela para acrescentar um campo e seu tipo
+```
+alter table cidade add uf int
+```
