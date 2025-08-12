@@ -243,3 +243,8 @@ update estado set nm_estado="Sao Paulo"
 ```
 update estado set nm_estado="Parana" where nm_estado = "Sao Paulo";
 ```
+
+- Para apagar
+```
+delete from estado where id_estado=10;
+```
