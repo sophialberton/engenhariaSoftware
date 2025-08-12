@@ -215,3 +215,31 @@ insert into estado (nm_estado, uf) values
 ```
 alter table cidade add uf int
 ```
+
+### Para consultar tabela
+```
+select * from estado;
++-----------+-------------------+------+
+| id_estado | nm_estado         | uf   |
++-----------+-------------------+------+
+|         1 | Santa Catarina    | SC   |
+|         2 | Rio Grande do Sul | r    |
+|         3 | Sao Paulo         | SP   |
++-----------+-------------------+------+
+```
+
+### para atualizar lista de valores do campo da tabela
+- deve se especificar oq quer mudar se nao muda tdos
+```
+update estado set uf="RS"
+    -> where id_estado = 2;
+```
+
+```
+update estado set nm_estado="Sao Paulo"
+    -> where id_estado= 4;
+```
+
+```
+update estado set nm_estado="Parana" where nm_estado = "Sao Paulo";
+```
