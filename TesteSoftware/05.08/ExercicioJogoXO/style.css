@@ -1,7 +1,12 @@
 body {
+  margin: 0;
+  height: 100vh; /* ocupa altura total da tela */
+  display: flex;
+  flex-direction: column; /* mantém título e tabuleiro na vertical */
+  align-items: center; /* centraliza na horizontal */
+  justify-content: center; /* centraliza na vertical */
+  background-color: #fafafa;
   font-family: Arial, sans-serif;
-  text-align: center;
-  background-color: #f2f2f2;
 }
 
 #game {
@@ -10,6 +15,14 @@ body {
   gap: 10px;
   justify-content: center;
   margin: 20px auto;
+}
+
+/* style.css */
+#gameActive {
+  display: grid;
+  grid-template-columns: repeat(3, 100px); /* 3 colunas */
+  grid-template-rows: repeat(3, 100px);   /* 3 linhas */
+  gap: 5px; /* espaço entre os quadrados */
 }
 
 .cell {
