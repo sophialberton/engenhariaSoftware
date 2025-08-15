@@ -6,9 +6,9 @@
 ### Inicio
     leia(ValorCompra)
     
-    Pontos <- trancar(ValorCOpra/20)
+    Pontos <- truncar(ValorCOpra/20)
     SE ponto >= 10
-        Desconto <-Trocar(Pontos/10)*10 
+        Desconto <-truncar(Pontos/10)*10 
     Fim-se
 
     Desconto <- Desconto 0*5
