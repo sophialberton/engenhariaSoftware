@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const newGameBtn = document.getElementById('btn-new-game');
   const minesRemainingSpan = document.getElementById('mines-left');
   const boardDiv = document.getElementById('board-container');
+  const messageP = document.getElementById('message'); // Elemento para mensagens
 
   // Estado do jogo
   let gameState = {
@@ -56,12 +57,18 @@ document.addEventListener("DOMContentLoaded", () => {
             cell.classList.add("mine");
           } else if (cellData.adjacentMines > 0) {
             cell.textContent = cellData.adjacentMines;
+            // Classe de cor corrigida para corresponder ao CSS
             cell.classList.add(`color-${cellData.adjacentMines}`);
           }
         } else if (cellData.flagged) {
           cell.textContent = "🚩";
         } else {
           cell.textContent = "";
+        }
+        
+        // Desativa o cursor se o jogo acabou
+        if (gameState.gameOver) {
+            cell.style.cursor = 'default';
         }
 
         boardDiv.appendChild(cell);
@@ -78,33 +85,32 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Revela célula e atualiza o tabuleiro, verifica vitória/derrota
   function handleLeftClick(event) {
-    if (!event.target.classList.contains("cell")) return;
+    if (gameState.gameOver || !event.target.classList.contains("cell")) return;
 
     const r = parseInt(event.target.dataset.row);
     const c = parseInt(event.target.dataset.col);
 
     if (gameState.board[r][c].flagged || gameState.board[r][c].revealed) return;
-    if (gameState.gameOver) return;
 
     const result = gameState.revealCell(r, c);
 
-    renderBoard();
-
     if (result === "mine") {
-      alert("Você perdeu! Explodiu uma mina 💥");
+      messageP.textContent = "Você perdeu! Explodiu uma mina 💥";
       revealAllMines();
     } else if (gameState.checkWin()) {
-      alert("Parabéns! Você venceu o jogo! 🎉");
+      messageP.textContent = "Parabéns! Você venceu o jogo! 🎉";
+      gameState.gameOver = true; // Marca como fim de jogo
       revealAllMines();
     }
+    
+    // Renderiza o tabuleiro após a jogada
+    renderBoard();
   }
 
   // Alterna bandeira na célula
   function handleRightClick(event) {
     event.preventDefault();
-    if (!event.target.classList.contains("cell")) return;
-
-    if (gameState.gameOver) return;
+    if (gameState.gameOver || !event.target.classList.contains("cell")) return;
 
     const r = parseInt(event.target.dataset.row);
     const c = parseInt(event.target.dataset.col);
@@ -112,7 +118,6 @@ document.addEventListener("DOMContentLoaded", () => {
     if (gameState.board[r][c].revealed) return;
 
     gameState.toggleFlag(r, c);
-
     renderBoard();
   }
 
@@ -125,7 +130,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
       }
     }
-    renderBoard();
   }
 
   // Inicia um novo jogo
@@ -134,16 +138,18 @@ document.addEventListener("DOMContentLoaded", () => {
     const cols = parseInt(colsInput.value);
     const mines = parseInt(minesInput.value);
 
+    // Validação melhorada
     if (
-      isNaN(rows) || rows < 1 ||
-      isNaN(cols) || cols < 1 ||
+      isNaN(rows) || rows < 5 ||
+      isNaN(cols) || cols < 5 ||
       isNaN(mines) || mines < 1 ||
-      mines >= rows * cols
+      mines >= rows * cols // Minas devem ser estritamente menores que o total de células
     ) {
-      alert("Por favor, insira valores válidos! Minas devem ser menos que o total de células.");
+      messageP.textContent = "Por favor, insira valores válidos! (Mínimo 5x5)";
       return;
     }
 
+    messageP.textContent = ""; // Limpa a mensagem de status
     gameState.rows = rows;
     gameState.cols = cols;
     gameState.mines = mines;
@@ -162,4 +168,3 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inicia o jogo pela primeira vez
   startNewGame();
 });
-

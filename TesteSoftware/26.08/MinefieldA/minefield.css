@@ -1,6 +1,7 @@
 body {
   font-family: Arial, sans-serif;
-  max-width: 500px;
+  /* Aumentado para acomodar tabuleiros maiores */
+  max-width: 95vw; 
   margin: 30px auto;
   text-align: center;
   background: #f0f0f0;
@@ -41,19 +42,16 @@ button {
 }
 
 #board-container {
-  display: grid;
+  /* ALTERAÇÃO PRINCIPAL: 
+     inline-grid faz o container se ajustar ao tamanho do conteúdo (as células),
+     garantindo que a borda sempre acompanhe o campo. */
+  display: inline-grid;
   border: 3px solid #444;
   background: #bbb;
   user-select: none;
 }
 
-.row {
-  display: flex;
-}
-
 .cell {
-  width: 30px;
-  height: 30px;
   border: 1px solid #777;
   background: #ccc;
   display: flex;
@@ -81,17 +79,18 @@ button {
   color: #333;
 }
 
-.cell.number-1 { color: blue; }
-.cell.number-2 { color: green; }
-.cell.number-3 { color: red; }
-.cell.number-4 { color: darkblue; }
-.cell.number-5 { color: brown; }
-.cell.number-6 { color: cyan; }
-.cell.number-7 { color: black; }
-.cell.number-8 { color: gray; }
+.color-1 { color: blue; }
+.color-2 { color: green; }
+.color-3 { color: red; }
+.color-4 { color: darkblue; }
+.color-5 { color: brown; }
+.color-6 { color: cyan; }
+.color-7 { color: black; }
+.color-8 { color: gray; }
 
 #message {
   margin-top: 20px;
+  min-height: 1.5rem;
   font-size: 1.2rem;
   font-weight: bold;
   color: #d00;
