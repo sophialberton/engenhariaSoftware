@@ -10,20 +10,25 @@ h1 {
 
 #tabuleiro {
   display: grid;
-  grid-template-columns: repeat(5, 60px);
-  grid-template-rows: repeat(5, 60px);
-  gap: 5px;
+  /* ATUALIZADO: 10 colunas e 40px de tamanho */
+  grid-template-columns: repeat(10, 40px);
+  /* ATUALIZADO: 10 linhas e 40px de tamanho */
+  grid-template-rows: repeat(10, 40px);
+  gap: 4px; /* Levemente ajustado */
   justify-content: center;
   margin-top: 20px;
+  border: 2px solid #01579b; /* Adicionando uma borda para destaque */
 }
 
 .celula {
-  width: 60px;
-  height: 60px;
+  /* ATUALIZADO: novo tamanho */
+  width: 40px;
+  height: 40px;
   background-color: #0288d1;
   border: 1px solid #01579b;
   color: white;
-  font-size: 24px;
+  /* ATUALIZADO: tamanho da fonte */
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;

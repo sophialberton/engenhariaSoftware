@@ -1,0 +1,98 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 500px;
+  margin: 30px auto;
+  text-align: center;
+  background: #f0f0f0;
+  padding: 10px;
+  user-select: none;
+}
+
+h1 {
+  margin-bottom: 20px;
+}
+
+.controls {
+  margin-bottom: 15px;
+}
+
+.controls label {
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+input[type="number"] {
+  width: 60px;
+  padding: 3px 5px;
+  font-size: 1rem;
+}
+
+button {
+  padding: 6px 12px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-left: 10px;
+}
+
+#game-info {
+  margin-bottom: 15px;
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+#board-container {
+  display: grid;
+  border: 3px solid #444;
+  background: #bbb;
+  user-select: none;
+}
+
+.row {
+  display: flex;
+}
+
+.cell {
+  width: 30px;
+  height: 30px;
+  border: 1px solid #777;
+  background: #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.cell.revealed {
+  background: #eee;
+  cursor: default;
+  border-color: #999;
+}
+
+.cell.mine {
+  background: #e22;
+  color: #fff;
+}
+
+.cell.flagged {
+  background: #ffd700;
+  color: #333;
+}
+
+.cell.number-1 { color: blue; }
+.cell.number-2 { color: green; }
+.cell.number-3 { color: red; }
+.cell.number-4 { color: darkblue; }
+.cell.number-5 { color: brown; }
+.cell.number-6 { color: cyan; }
+.cell.number-7 { color: black; }
+.cell.number-8 { color: gray; }
+
+#message {
+  margin-top: 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #d00;
+}
