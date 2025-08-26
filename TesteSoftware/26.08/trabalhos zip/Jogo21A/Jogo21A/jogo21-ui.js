@@ -1,15 +1,11 @@
-// Jogo21A/jogo21-ui.js
-
 // jogo21-ui.js - Controle da interface do Jogo21
 
 let estadoJogo = null;
 
-// Elementos da DOM
 const maoJogadorEl = document.getElementById('mao-jogador');
 const maoDealerEl = document.getElementById('mao-dealer');
 const pontosJogadorEl = document.getElementById('pontos-jogador');
 const pontosDealerEl = document.getElementById('pontos-dealer');
-const dealerHitCountEl = document.getElementById('dealer-hit-count'); // Novo elemento
 const statusEl = document.getElementById('status');
 const btnHit = document.getElementById('btn-hit');
 const btnStand = document.getElementById('btn-stand');
@@ -18,52 +14,43 @@ const btnNovo = document.getElementById('btn-novo');
 function criarCartaElemento(carta) {
   const div = document.createElement('div');
   div.className = 'carta';
-  // Adiciona classes para naipes de cores diferentes
-  if (['♥', '♦'].includes(carta.naipe)) {
-    div.classList.add('vermelha');
-  }
   div.textContent = carta.face + carta.naipe;
   return div;
 }
 
-function atualizarInterface(revelarCartasDealer = false) {
-  // Limpa as mãos
+function atualizarInterface() {
+  // Mostrar cartas do jogador
   maoJogadorEl.innerHTML = '';
-  maoDealerEl.innerHTML = '';
-
-  // Renderiza a mão do jogador
   estadoJogo.maoJogador.forEach(carta => {
     maoJogadorEl.appendChild(criarCartaElemento(carta));
   });
 
-  // Lógica para renderizar a mão do dealer
-  if (estadoJogo.status === 'jogando' && !revelarCartasDealer) {
-    // No turno do jogador, a primeira carta do dealer é visível e as outras ocultas
+  // Mostrar cartas do dealer (se jogo em andamento, só mostra a primeira carta)
+  maoDealerEl.innerHTML = '';
+  if (estadoJogo.status === 'jogando') {
+    // Mostra só a primeira carta visível, as outras escondidas
     maoDealerEl.appendChild(criarCartaElemento(estadoJogo.maoDealer[0]));
     for (let i = 1; i < estadoJogo.maoDealer.length; i++) {
       const cartaOculta = document.createElement('div');
-      cartaOculta.className = 'carta oculta';
-      cartaOculta.textContent = ' ';
+      cartaOculta.className = 'carta';
+      cartaOculta.textContent = '❓';
       maoDealerEl.appendChild(cartaOculta);
     }
   } else {
-    // No final do jogo ou durante o turno do dealer, todas as cartas são reveladas
+    // Jogo terminou, mostra todas as cartas do dealer
     estadoJogo.maoDealer.forEach(carta => {
       maoDealerEl.appendChild(criarCartaElemento(carta));
     });
   }
 
-  // Atualiza a contagem de pontos
+  // Atualiza pontos
   pontosJogadorEl.textContent = Jogo21.calcularPontos(estadoJogo.maoJogador);
-  pontosDealerEl.textContent = (estadoJogo.status === 'jogando' && !revelarCartasDealer) ? '?' : Jogo21.calcularPontos(estadoJogo.maoDealer);
+  pontosDealerEl.textContent = estadoJogo.status === 'jogando' ? '?' : Jogo21.calcularPontos(estadoJogo.maoDealer);
 
-  // Atualiza o contador de cartas do dealer
-  dealerHitCountEl.textContent = estadoJogo.dealerPegouCartas;
-
-  // Atualiza o status do jogo e o estado dos botões
+  // Atualiza status
   switch (estadoJogo.status) {
     case 'jogando':
-      statusEl.textContent = 'Sua vez! Escolha uma ação.';
+      statusEl.textContent = 'Sua vez! Escolha: Pedir Carta ou Parar.';
       btnHit.disabled = false;
       btnStand.disabled = false;
       break;
@@ -85,45 +72,21 @@ function atualizarInterface(revelarCartasDealer = false) {
   }
 }
 
-// *** NOVA FUNÇÃO PARA O TURNO ANIMADO DO DEALER ***
-function executarTurnoDealerAnimado() {
-  // Revela as cartas iniciais do dealer
-  atualizarInterface(true);
-
-  const pontosDealer = Jogo21.calcularPontos(estadoJogo.maoDealer);
-
-  // Se o dealer tem menos de 17 pontos, ele pega uma carta
-  if (pontosDealer < 17) {
-    setTimeout(() => {
-      estadoJogo.maoDealer.push(estadoJogo.baralho.pop());
-      estadoJogo.dealerPegouCartas++;
-      // Chama a função novamente para a próxima carta ou para finalizar
-      executarTurnoDealerAnimado();
-    }, 800); // Atraso de 800ms para cada carta
-  } else {
-    // Se o dealer tem 17 ou mais, finaliza o jogo
-    setTimeout(() => {
-      estadoJogo = Jogo21.verificarVencedor(estadoJogo);
-      atualizarInterface(true); // Atualiza a UI com o resultado final
-    }, 500);
-  }
-}
-
 // Evento do botão "Pedir Carta"
 btnHit.addEventListener('click', () => {
   estadoJogo = Jogo21.jogadorHit(estadoJogo);
   atualizarInterface();
+
+  if (estadoJogo.status === 'derrota') {
+    // Se estourou 21, jogo acaba
+    atualizarInterface();
+  }
 });
 
-// Evento do botão "Parar" - MODIFICADO
+// Evento do botão "Parar"
 btnStand.addEventListener('click', () => {
-  // Desabilita os botões do jogador imediatamente
-  btnHit.disabled = true;
-  btnStand.disabled = true;
-  statusEl.textContent = 'Dealer está jogando...';
-
-  // Inicia a sequência animada do turno do dealer
-  executarTurnoDealerAnimado();
+  estadoJogo = Jogo21.dealerTurn(estadoJogo);
+  atualizarInterface();
 });
 
 // Evento do botão "Novo Jogo"

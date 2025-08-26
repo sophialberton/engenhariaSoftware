@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Campo Minado</title>
+  <link rel="stylesheet" href="minefield.css" />
+</head>
+<body>
+  <h1>Campo Minado</h1>
+
+  <div class="controls">
+    <label>
+      Linhas:
+      <input type="number" id="input-rows" min="5" max="20" value="10" />
+    </label>
+    <label>
+      Colunas:
+      <input type="number" id="input-cols" min="5" max="20" value="10" />
+    </label>
+    <label>
+      Minas:
+      <input type="number" id="input-mines" min="1" max="50" value="15" />
+    </label>
+    <button id="btn-new-game">Novo Jogo</button>
+  </div>
+
+  <div id="game-info">
+    <span>Minas restantes: <span id="mines-left">0</span></span>
+  </div>
+
+  <div id="board-container"></div>
+
+  <p id="message"></p>
+
+  <script src="minefield.js" defer></script>
+  <script src="minefield-ui.js" defer></script>
+</body>
+</html>

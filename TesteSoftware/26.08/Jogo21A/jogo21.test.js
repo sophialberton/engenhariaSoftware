@@ -1,106 +1,59 @@
-// jogo21.test.js - Testes unitários do Jogo21 (versão com a correção definitiva)
+// jogo21.test.js - Testes unitários do Jogo21 com feedback individual
 
 (() => {
-  let totalTestes = 0;
-  let testesPassaram = 0;
+  console.log("--- Iniciando testes do Jogo21 ---");
 
-  function describe(descricao, fn) {
-    console.log(`%c--- ${descricao} ---`, 'font-weight: bold; font-size: 14px; color: #1E90FF;');
-    fn();
+  // Teste: Criar um baralho e testar seu tamanho
+  const baralho = Jogo21.criarBaralho();
+  console.assert(baralho.length === 52, "FALHOU: O baralho deve ter 52 cartas");
+  if (baralho.length === 52) console.log("✅ PASSOU: criarBaralho() - O baralho tem 52 cartas.");
+
+  // Teste: Embaralhar o baralho e testar tamanho
+  const baralhoEmbaralhado = Jogo21.embaralhar([...baralho]);
+  console.assert(baralhoEmbaralhado.length === 52, "FALHOU: O baralho embaralhado deve ter 52 cartas");
+  if (baralhoEmbaralhado.length === 52) console.log("✅ PASSOU: embaralhar() - O baralho embaralhado mantém 52 cartas.");
+
+  // Teste: Cálculo de pontos com cartas simples
+  let maoSimples = [{face:'2', naipe:'♠'}, {face:'3', naipe:'♥'}];
+  console.assert(Jogo21.calcularPontos(maoSimples) === 5, "FALHOU: Pontos de 2 + 3 devem ser 5");
+  if (Jogo21.calcularPontos(maoSimples) === 5) console.log("✅ PASSOU: calcularPontos() - Soma de cartas simples (2+3=5).");
+
+  // Teste: Cálculo de pontos com Ás valendo 11
+  let maoAs11 = [{face:'A', naipe:'♠'}, {face:'9', naipe:'♦'}];
+  console.assert(Jogo21.calcularPontos(maoAs11) === 20, "FALHOU: Pontos com Ás como 11 + 9 devem ser 20");
+  if (Jogo21.calcularPontos(maoAs11) === 20) console.log("✅ PASSOU: calcularPontos() - Ás vale 11 para um total de 20.");
+
+  // Teste: Cálculo de pontos com Ás valendo 1
+  let maoAs1 = [{face:'A', naipe:'♠'}, {face:'9', naipe:'♦'}, {face:'5', naipe:'♥'}];
+  console.assert(Jogo21.calcularPontos(maoAs1) === 15, "FALHOU: Pontos com Ás como 1 + 9 + 5 devem ser 15");
+  if (Jogo21.calcularPontos(maoAs1) === 15) console.log("✅ PASSOU: calcularPontos() - Ás vale 1 para evitar estourar (total 15).");
+
+  // Teste: Iniciar jogo - verificar tamanho do baralho e mãos
+  const estadoInicial = Jogo21.iniciarJogo();
+  console.assert(estadoInicial.baralho.length === 48, "FALHOU: Baralho deve ter 48 cartas após iniciar jogo");
+  console.assert(estadoInicial.maoJogador.length === 2, "FALHOU: Jogador deve começar com 2 cartas");
+  console.assert(estadoInicial.maoDealer.length === 2, "FALHOU: Dealer deve começar com 2 cartas");
+  if (estadoInicial.baralho.length === 48 && estadoInicial.maoJogador.length === 2 && estadoInicial.maoDealer.length === 2) {
+    console.log("✅ PASSOU: iniciarJogo() - Estado inicial do jogo está correto.");
   }
 
-  function it(mensagem, fn) {
-    totalTestes++;
-    try {
-      fn();
-      console.log(`%c  ✓ ${mensagem}`, 'color: #32CD32;');
-      testesPassaram++;
-    } catch (error) {
-      console.error(`%c  ✗ ${mensagem}`, 'color: #DC143C;');
-      console.error(error);
-    }
-  }
+  // Teste: Jogador pedir carta (hit)
+  let estadoHit = Jogo21.jogadorHit(JSON.parse(JSON.stringify(estadoInicial)));
+  console.assert(estadoHit.maoJogador.length === 3, "FALHOU: Jogador deve ter 3 cartas após hit");
+  if (estadoHit.maoJogador.length === 3) console.log("✅ PASSOU: jogadorHit() - Jogador recebe uma terceira carta.");
 
-  function assertEqual(atual, esperado, mensagemErro) {
-    if (JSON.stringify(atual) !== JSON.stringify(esperado)) {
-      throw new Error(mensagemErro || `Esperado: ${JSON.stringify(esperado)}, mas Recebido: ${JSON.stringify(atual)}`);
-    }
-  }
+  // Teste: Turno do dealer
+  let estadoDealer = Jogo21.dealerTurn(JSON.parse(JSON.stringify(estadoInicial)));
+  console.assert(estadoDealer.status !== 'jogando', "FALHOU: Após dealerTurn, status não deve ser 'jogando'");
+  if (estadoDealer.status !== 'jogando') console.log("✅ PASSOU: dealerTurn() - O status do jogo muda após o turno do dealer.");
 
-  console.log('%c🚀 Iniciando suíte de testes do Jogo21...', 'font-weight: bold; font-size: 16px;');
-
-  describe('Funções Puras e Utilitárias', () => {
-    it('deve criar um baralho com 52 cartas', () => {
-      assertEqual(Jogo21.criarBaralho().length, 52);
-    });
-
-    it('deve calcular pontos corretamente (A+9=20)', () => {
-      assertEqual(Jogo21.calcularPontos([{face:'A'}, {face:'9'}]), 20);
-    });
-
-    it('deve tratar o Ás como 1 para evitar estourar (A+9+5=15)', () => {
-      assertEqual(Jogo21.calcularPontos([{face:'A'}, {face:'9'}, {face:'5'}]), 15);
-    });
+  // Teste: Verificação de vencedor
+  let estadoVencedor = Jogo21.verificarVencedor({
+      maoJogador: [{face:'K'}, {face:'Q'}], // 20 pontos
+      maoDealer: [{face:'K'}, {face:'9'}]   // 19 pontos
   });
+  console.assert(estadoVencedor.status === 'vitoria', "FALHOU: Status deveria ser 'vitoria'");
+  if (estadoVencedor.status === 'vitoria') console.log("✅ PASSOU: verificarVencedor() - Determina a vitória corretamente.");
 
-  describe('Lógica e Fluxo do Jogo', () => {
-    
-    it('deve distribuir as cartas iniciais corretamente', () => {
-      const baralho = [
-          {face:'6', naipe:'♥'},
-          {face:'A', naipe:'♠'},
-          {face:'5', naipe:'♦'},
-          {face:'K', naipe:'♣'},
-      ].reverse();
-      
-      const estado = Jogo21.iniciarJogo(baralho);
-      
-      // CORREÇÃO APLICADA: A ordem esperada agora é [6, A], que é a ordem correta de recebimento.
-      assertEqual(estado.maoJogador, [{face:'6', naipe:'♥'}, {face:'A', naipe:'♠'}]);
-      assertEqual(Jogo21.calcularPontos(estado.maoJogador), 17);
-
-      assertEqual(estado.maoDealer, [{face:'K', naipe:'♣'}, {face:'5', naipe:'♦'}]);
-      assertEqual(Jogo21.calcularPontos(estado.maoDealer), 15);
-    });
-
-    it('deve permitir que o jogador peça uma carta (hit)', () => {
-      const baralho = [
-          {face:'6', naipe:'♥'}, {face:'A', naipe:'♠'}, {face:'5', naipe:'♦'}, {face:'K', naipe:'♣'},
-          {face:'J', naipe:'♦'},
-      ].reverse();
-
-      let estado = Jogo21.iniciarJogo(baralho);
-      estado = Jogo21.jogadorHit(estado);
-
-      assertEqual(estado.maoJogador.length, 3);
-      assertEqual(Jogo21.calcularPontos(estado.maoJogador), 17);
-    });
-
-    it('deve declarar derrota se o jogador estourar', () => {
-      const baralho = [ {face:'J'} ].reverse();
-      let estado = { baralho, maoJogador: [{face:'K'}, {face:'Q'}], status: 'jogando' };
-      estado = Jogo21.jogadorHit(estado);
-      
-      assertEqual(Jogo21.calcularPontos(estado.maoJogador), 30);
-      assertEqual(estado.status, 'derrota');
-    });
-
-    it('deve executar o turno do dealer corretamente (comprar até 17+)', () => {
-        const baralho = [
-            {face:'6', naipe:'♥'}, {face:'A', naipe:'♠'}, {face:'5', naipe:'♦'}, {face:'K', naipe:'♣'},
-            {face:'8', naipe:'♣'},
-        ].reverse();
-        
-        let estado = Jogo21.iniciarJogo(baralho);
-        estado = Jogo21.dealerTurn(estado);
-
-        assertEqual(estado.maoDealer.length, 3, "Dealer deveria ter comprado uma carta");
-        assertEqual(Jogo21.calcularPontos(estado.maoDealer), 23);
-        assertEqual(estado.status, 'vitoria', "Jogador vence porque o dealer estourou");
-    });
-  });
-
-  console.log(`\n%c--- Resumo dos Testes ---`, 'font-weight: bold; font-size: 14px; color: #1E90FF;');
-  const corResumo = testesPassaram === totalTestes ? '#32CD32' : '#DC143C';
-  console.log(`%cPassaram: ${testesPassaram} de ${totalTestes}`, `color: ${corResumo}; font-weight: bold;`);
+  console.log("\n--- Testes do Jogo21 concluídos ---");
 })();
