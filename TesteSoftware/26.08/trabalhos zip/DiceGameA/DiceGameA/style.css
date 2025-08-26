@@ -1,0 +1,21 @@
+body {
+  font-family: Arial, sans-serif;
+  max-width: 400px;
+  margin: 30px auto;
+  text-align: center;
+}
+.dice-results div, .scoreboard div {
+  margin: 8px 0;
+  font-size: 1.2rem;
+}
+#play-btn, #reset-btn {
+  padding: 10px 15px;
+  margin: 10px 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+#round-result {
+  font-weight: bold;
+  margin: 20px 0;
+  font-size: 1.3rem;
+}
