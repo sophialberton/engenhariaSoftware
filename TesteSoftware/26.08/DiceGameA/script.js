@@ -7,22 +7,30 @@ const diceGame = (() => {
 
   // Rola um dado (1 a 6)
   function rollDice() {
-    // TODO: implementar função que retorna um número aleatório de 1 a 6
-    // Dica: use Math.random()
+    // Retorna um número aleatório de 1 a 6
+    return Math.floor(Math.random() * 6) + 1;
   }
 
   // Decide o vencedor da rodada: "player1", "player2" ou "tie"
   function decideWinner(p1Roll, p2Roll) {
-    // TODO: comparar os valores p1Roll e p2Roll e retornar:
-    // "player1" se p1Roll > p2Roll
-    // "player2" se p2Roll > p1Roll
-    // "tie" se forem iguais
+    if (p1Roll > p2Roll) {
+      return "player1";
+    } else if (p2Roll > p1Roll) {
+      return "player2";
+    } else {
+      return "tie";
+    }
   }
 
   // Atualiza o placar
   function updateScoreboard(winner) {
-    // TODO: incrementar o placar correto baseado no vencedor
-    // lembre-se que winner pode ser "player1", "player2" ou "tie"
+    if (winner === "player1") {
+      player1Wins++;
+    } else if (winner === "player2") {
+      player2Wins++;
+    } else if (winner === "tie") {
+      ties++;
+    }
   }
 
   // Reinicia o placar
@@ -67,27 +75,40 @@ function updateScoreboardUI() {
 }
 
 function playRound() {
-  const p1Roll = diceGame.rollDice();
-  const p2Roll = diceGame.rollDice();
+  // Adiciona a classe 'rolling' para iniciar a animação
+  player1RollEl.classList.add('rolling');
+  player2RollEl.classList.add('rolling');
+  roundResultEl.textContent = "Rolando dados...";
+  statusEl.textContent = "Aguarde...";
 
-  player1RollEl.textContent = p1Roll;
-  player2RollEl.textContent = p2Roll;
+  // Pequeno delay para a animação ser visível antes de mostrar o resultado
+  setTimeout(() => {
+    const p1Roll = diceGame.rollDice();
+    const p2Roll = diceGame.rollDice();
 
-  const winner = diceGame.decideWinner(p1Roll, p2Roll);
+    player1RollEl.textContent = p1Roll;
+    player2RollEl.textContent = p2Roll;
 
-  diceGame.updateScoreboard(winner);
+    const winner = diceGame.decideWinner(p1Roll, p2Roll);
 
-  if (winner === "player1") {
-    roundResultEl.textContent = "Jogador 1 ganhou esta rodada!";
-  } else if (winner === "player2") {
-    roundResultEl.textContent = "Jogador 2 ganhou esta rodada!";
-  } else {
-    roundResultEl.textContent = "Esta rodada terminou empatada!";
-  }
+    diceGame.updateScoreboard(winner);
 
-  updateScoreboardUI();
+    if (winner === "player1") {
+      roundResultEl.textContent = "Jogador 1 ganhou esta rodada!";
+    } else if (winner === "player2") {
+      roundResultEl.textContent = "Jogador 2 ganhou esta rodada!";
+    } else {
+      roundResultEl.textContent = "Esta rodada terminou empatada!";
+    }
 
-  statusEl.textContent = "Clique em 'Jogar' para próxima rodada.";
+    updateScoreboardUI();
+
+    statusEl.textContent = "Clique em 'Jogar' para próxima rodada.";
+
+    // Remove a classe 'rolling' para parar a animação
+    player1RollEl.classList.remove('rolling');
+    player2RollEl.classList.remove('rolling');
+  }, 700); // Ajuste o tempo (em ms) conforme a duração da animação
 }
 
 function resetGameUI() {
@@ -106,36 +127,41 @@ resetGameUI();
 
 
 // --- Testes no console usando console.assert() ---
-// COMPLETE os testes abaixo, escrevendo asserções que verifiquem as funções do jogo:
+// Testes completos para verificar as funções do jogo:
 
 console.log("Iniciando testes do jogo de dados...");
 
 // Testa rollDice() - valores válidos
 for(let i = 0; i < 1000; i++) {
   const roll = diceGame.rollDice();
-  // TODO: use console.assert para verificar se roll está entre 1 e 6
-  // Exemplo: console.assert(roll >= 1 && roll <= 6, "Mensagem de erro");
+  console.assert(roll >= 1 && roll <= 6, "Erro: rollDice() retornou um valor fora do intervalo 1-6. Valor: " + roll);
 }
 
 // Testa decideWinner()
-// TODO: teste pelo menos 3 casos, um para vitória do player1, um para vitória do player2, e um empate
-// Exemplo:
-// console.assert(diceGame.decideWinner(6, 3) === "player1", "Mensagem");
+console.assert(diceGame.decideWinner(6, 3) === "player1", "Erro: decideWinner(6, 3) deveria retornar 'player1'");
+console.assert(diceGame.decideWinner(2, 5) === "player2", "Erro: decideWinner(2, 5) deveria retornar 'player2'");
+console.assert(diceGame.decideWinner(4, 4) === "tie", "Erro: decideWinner(4, 4) deveria retornar 'tie'");
 
 // Testa updateScoreboard()
 diceGame.resetGame();
+diceGame.updateScoreboard("player1");
+let score = diceGame.getScore();
+console.assert(score.player1Wins === 1, "Erro: placar do Jogador 1 deveria ser 1");
 
-// TODO: chame updateScoreboard("player1") e verifique se player1Wins incrementou
-// TODO: chame updateScoreboard("player2") e verifique se player2Wins incrementou
-// TODO: chame updateScoreboard("tie") e verifique se ties incrementou
+diceGame.updateScoreboard("player2");
+score = diceGame.getScore();
+console.assert(score.player2Wins === 1, "Erro: placar do Jogador 2 deveria ser 1");
+
+diceGame.updateScoreboard("tie");
+score = diceGame.getScore();
+console.assert(score.ties === 1, "Erro: placar de empates deveria ser 1");
 
 // Testa resetGame()
 diceGame.resetGame();
-let score = diceGame.getScore();
+score = diceGame.getScore();
+console.assert(score.player1Wins === 0, "Erro: player1Wins deveria ser 0 após o reset");
+console.assert(score.player2Wins === 0, "Erro: player2Wins deveria ser 0 após o reset");
+console.assert(score.ties === 0, "Erro: ties deveria ser 0 após o reset");
 
-// TODO: verifique se todos os valores do placar estão zerados após resetGame()
-// Exemplo:
-// console.assert(score.player1Wins === 0, "Mensagem");
-
-// Finalize com mensagem de sucesso (após completar os testes)
-console.log("Complete os testes para verificar a lógica do jogo.");
+// Finalize com mensagem de sucesso
+console.log("Todos os testes passaram com sucesso! A lógica do jogo está correta.");

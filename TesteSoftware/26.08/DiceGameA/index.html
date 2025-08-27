@@ -1,32 +1,42 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Jogo de Dados Simples</title>
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo de Dados - Desafio</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>Jogo de Dados</h1>
+    <div class="container">
+        <h1>🎲 Jogo de Dados 🎲</h1>
 
-  <p id="status">Clique em "Jogar" para começar</p>
+        <div class="game-area">
+            <div class="player-card">
+                <h2>Jogador 1</h2>
+                <div class="dice-display" id="player1-roll">-</div>
+                <p>Vitórias: <span id="player1-wins">0</span></p>
+            </div>
 
-  <div class="dice-results">
-    <div>Jogador 1: <span id="player1-roll">-</span></div>
-    <div>Jogador 2: <span id="player2-roll">-</span></div>
-  </div>
+            <div class="center-controls">
+                <div class="result-display">
+                    <p id="round-result">Clique em 'Jogar' para começar!</p>
+                    <p class="status-message" id="status"></p>
+                </div>
+                <div class="button-group">
+                    <button id="play-btn">Jogar Rodada</button>
+                    <button id="reset-btn" class="secondary-btn">Resetar Placar</button>
+                </div>
+                <p class="ties-display">Empates: <span id="ties">0</span></p>
+            </div>
 
-  <p id="round-result"></p>
+            <div class="player-card">
+                <h2>Jogador 2</h2>
+                <div class="dice-display" id="player2-roll">-</div>
+                <p>Vitórias: <span id="player2-wins">0</span></p>
+            </div>
+        </div>
+    </div>
 
-  <div class="scoreboard">
-    <div>Vitórias Jogador 1: <span id="player1-wins">0</span></div>
-    <div>Vitórias Jogador 2: <span id="player2-wins">0</span></div>
-    <div>Empates: <span id="ties">0</span></div>
-  </div>
-
-  <button id="play-btn">Jogar</button>
-  <button id="reset-btn">Resetar Placar</button>
-
-  <script src="script.js" defer></script>
+    <script src="script.js"></script>
 </body>
 </html>
