@@ -39,19 +39,33 @@ const MemoryGame = (() => {
 
   // Esconde duas cartas (se não forem pares)
   function hideCards(board, idx1, idx2) {
-    // TODO: Esconder as duas cartas (revealed = false)
-    // Dica:
-    // board[idx1].revealed = false;
-    // board[idx2].revealed = false;
+    if (board[idx1] && !board[idx1].matched) {
+      board[idx1].revealed = false;
+    }
+    if (board[idx2] && !board[idx2].matched) {
+      board[idx2].revealed = false;
+    }
   }
 
   // Verifica se duas cartas combinam
   function checkMatch(board, idx1, idx2) {
-    // TODO: Verificar se os índices são válidos
-    // TODO: Verificar se os símbolos são iguais
-    // TODO: Marcar as duas como matched = true se for par
-    // TODO: Retornar true se combinarem, false caso contrário
-    return false;
+    // Verifica se os índices são válidos e diferentes
+    if (idx1 < 0 || idx1 >= board.length || idx2 < 0 || idx2 >= board.length || idx1 === idx2) {
+        return false;
+    }
+    
+    const card1 = board[idx1];
+    const card2 = board[idx2];
+
+    // Verifica se os símbolos são iguais
+    if (card1.symbol === card2.symbol) {
+      // Marca as duas como matched = true se for par
+      card1.matched = true;
+      card2.matched = true;
+      return true; // Retorna true se combinarem
+    }
+    
+    return false; // Retorna false caso contrário
   }
 
   // Verifica se todas as cartas foram combinadas
