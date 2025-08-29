@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <title>Jogo21 em JS</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Jogo21</h1>
+
+  <div id="jogo">
+    <div>
+      <h2>Suas cartas (<span id="pontos-jogador">0</span> pontos):</h2>
+      <div id="mao-jogador" class="mao"></div>
+    </div>
+
+    <div>
+      <h2>Cartas do Dealer (<span id="pontos-dealer">0</span> pontos):</h2>
+      <div id="mao-dealer" class="mao"></div>
+    </div>
+
+    <div id="status"></div>
+
+    <div id="botoes">
+      <button id="btn-hit">Pedir Carta (Hit)</button>
+      <button id="btn-stand">Parar (Stand)</button>
+      <button id="btn-novo">Novo Jogo</button>
+    </div>
+  </div>
+
+  <script src="jogo21.js"></script>
+  
+  <script src="jogo21-ui.js"></script>
+
+  <script src="jogo21.test.js"></script>
+</body>
+</html>
