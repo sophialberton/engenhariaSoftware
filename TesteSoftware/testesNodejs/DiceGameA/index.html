@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Jogo de Dados Simples</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <h1>Jogo de Dados</h1>
+
+  <p id="status">Clique em "Jogar" para começar</p>
+
+  <div class="dice-results">
+    <div>Jogador 1: <span id="player1-roll">-</span></div>
+    <div>Jogador 2: <span id="player2-roll">-</span></div>
+  </div>
+
+  <p id="round-result"></p>
+
+  <div class="scoreboard">
+    <div>Vitórias Jogador 1: <span id="player1-wins">0</span></div>
+    <div>Vitórias Jogador 2: <span id="player2-wins">0</span></div>
+    <div>Empates: <span id="ties">0</span></div>
+  </div>
+
+  <button id="play-btn">Jogar</button>
+  <button id="reset-btn">Resetar Placar</button>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
