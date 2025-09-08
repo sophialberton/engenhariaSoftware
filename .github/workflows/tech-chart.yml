@@ -1,0 +1,36 @@
+name: Generate Repository Metrics
+
+on:
+  push:
+    branches:
+      - main
+  # Adiciona um gatilho para rodar manualmente, se precisar testar
+  workflow_dispatch:
+
+jobs:
+  metrics:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    steps:
+      - name: Checkout full repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: Generate metrics
+        uses: lowlighter/metrics@latest
+        with:
+          filename: metrics.languages.svg
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+          # Configuração mais robusta:
+          # Desativa a base padrão e ativa apenas o plugin de linguagens
+          base: ""
+          config_timezone: America/Sao_Paulo
+          plugin_languages: yes
+          plugin_languages_analysis_timeout: 15
+          plugin_languages_limit: 8
+          plugin_languages_threshold: 0%
+          plugin_languages_layout: classic
