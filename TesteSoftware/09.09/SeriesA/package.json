@@ -1,0 +1,22 @@
+{
+  "name": "streaming-series-app",
+  "version": "1.0.0",
+  "description": "Sistema simples de gerenciamento de séries de streaming usando módulos ES e node:test",
+  "main": "series.mjs",
+  "type": "module",
+  "scripts": {
+    "test": "node --test"
+  },
+  "keywords": [
+    "streaming",
+    "series",
+    "node",
+    "esm",
+    "test"
+  ],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "engines": {
+    "node": ">=14"
+  }
+}

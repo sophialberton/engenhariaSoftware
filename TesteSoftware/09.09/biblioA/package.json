@@ -1,0 +1,14 @@
+{
+  "name": "biblioteca-node",
+  "version": "1.0.0",
+  "description": "Sistema simples de controle de biblioteca local com testes usando node:test",
+  "main": "src/library.js",
+  "scripts": {
+    "test": "node --test"
+  },
+  "author": "Seu Nome",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
