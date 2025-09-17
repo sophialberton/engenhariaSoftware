@@ -1,0 +1,16 @@
+{
+  "name": "student-management-app",
+  "version": "1.0.0",
+  "description": "Sistema de gestão acadêmica com cadastro de alunos e gerenciamento de notas",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": ["students", "grades", "academic", "jest", "testing"],
+  "author": "Seu Nome",
+  "license": "MIT",
+  "devDependencies": {
+    "jest": "^29.0.0"
+  }
+}
