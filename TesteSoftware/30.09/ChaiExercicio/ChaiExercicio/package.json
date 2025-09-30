@@ -1,0 +1,13 @@
+{
+  "name": "controle-mercado",
+  "version": "1.0.0",
+  "description": "Sistema simples de controle de estoque e caixa para minimercado",
+  "scripts": {
+    "test": "mocha"
+  },
+  "devDependencies": {
+    "chai": "^4.3.10",
+    "mocha": "^10.2.0",
+    "sinon": "^17.0.0"
+  }
+}
